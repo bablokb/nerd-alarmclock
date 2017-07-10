@@ -1,0 +1,24 @@
+# --------------------------------------------------------------------------
+# Systemd service Definition for nerd-alarmclock.service.
+#
+# The service just starts the script /usr/local/sbin/nerd-alarmclock.py
+#
+# Please edit /etc/nerd-alarmclock.conf to configure the script.
+#
+# Author: Bernhard Bablok
+# License: GPL3
+#
+# Website: https://github.com/bablokb/nerd-alarmclock
+#
+# --------------------------------------------------------------------------
+
+[Unit]
+Description=Master service for the alarm-clock
+After=multi-user.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/nerd-alarmclock.py
+
+[Install]
+WantedBy=multi-user.target
