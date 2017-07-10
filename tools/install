@@ -1,0 +1,90 @@
+#!/bin/bash
+# --------------------------------------------------------------------------
+# This script installs files and services specific to this project.
+#
+# Author: Bernhard Bablok
+# License: GPL3
+#
+# Website: https://github.com/bablokb/nerd-alarmclock
+#
+# --------------------------------------------------------------------------
+
+PACKAGES="python-blinkt python-fourletterphat"
+PROJECT="nerd-alarmclock"
+
+# --- basic packages   ------------------------------------------------------
+
+check_packages() {
+  local p
+  for p in "$@"; do
+    echo -en "Checking $p ... " >&2
+    dpkg -s "$p" 2>/dev/null | grep -q "Status.*ok" || return 0
+    echo "ok" >&2
+  done
+  return 1
+}
+
+install_packages() {
+  if [ -n "$PACKAGES" ] && check_packages $PACKAGES; then
+    echo -e "[INFO] installing additional packages" 2>&1
+    apt-get update
+    apt-get -y install $PACKAGES
+  fi
+}
+
+# --- install specific files   ----------------------------------------------
+
+install_files() {
+  echo -e "[INFO] installing project files" 2>&1
+
+  rand="$RANDOM"
+  if [ -f "/etc/$PROJECT.conf" ]; then
+    # save current configuration
+    mv "/etc/$PROJECT.conf" "/etc/$PROJECT.conf.$rand"
+  fi
+
+  for f in `find $(dirname "$0")/../files/ -type f`; do
+    cp "$f" "${f#*files}"
+    chown root:root "${f#*files}"
+  done
+
+  chmod 755 "/usr/local/sbin/$PROJECT.py"
+  chmod 644 "/etc/$PROJECT.conf"
+  chmod 644 "/etc/systemd/system/$PROJECT.service"
+
+  # restore old configuration
+  if [ -f "/etc/$PROJECT.conf.$rand" ]; then
+    mv -f "/etc/$PROJECT.conf" "/etc/$PROJECT.conf.new"
+    mv "/etc/$PROJECT.conf.$rand" "/etc/$PROJECT.conf"
+    echo -e "[INFO] new version of configuration file saved to: /etc/$PROJECT.conf.new" 2>&1
+  fi
+}
+
+# --- configure system   ----------------------------------------------------
+
+configure_system() {
+  if ! grep -q "^dtparam=i2c_arm=on"; then do
+    echo -e "[INFO] configuring /boot/config.txt" 2>&1
+    echo "dtparam=i2c_arm=on" >> /boot/config.txt
+  fi
+  if ! grep -q "^i2c-dev" /etc/modules; then
+    echo -e "[INFO] configuring /etc/modules" 2>&1
+    echo "i2c-dev" >> /etc/modules
+  fi
+}
+
+# --- activate service   ----------------------------------------------------
+
+enable_services() {
+  echo -e "[INFO] enabeling $PROJECT.service" 2>&1
+  systemctl enable "$PROJECT.service"
+}
+
+# --- main program   --------------------------------------------------------
+
+install_packages
+install_files
+configure_system
+
+echo "Please edit /etc/$PROJECT.conf"
+echo "Restart the system to activate changes"
