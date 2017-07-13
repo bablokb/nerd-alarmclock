@@ -3,12 +3,12 @@ GPIO-Pins used
 
 |Raspberry Pi  | Desc.  |4Key | Blinkt!  | 4LpHat  | RTC |
 |-------------:|--------|----:|---------:|--------:| ----|
-|           1  | 3.3V   |     |          |         | VCC |
+|           1  | 3.3V   |     |          |      17 | VCC |
 |           2  | 5V     |     |          |       2 |     |
 |           3  | SDA    |     |          |       3 | SDA |
 |           4  | 5V     |     |        2 |         |     |
 |           5  | SCL    |     |          |       5 | SCL |
-|           6  | GND    |     |          |         | GND |
+|           6  | GND    |     |          |       6 | GND |
 |           7  | GPIO04 | N2  |          |         |     |
 |           9  | GND    | GND |          |         |     |
 |          11  | GPIO17 | N1  |          |         |     |
@@ -16,6 +16,5 @@ GPIO-Pins used
 |          14  | GND    |     |        6 |         |     |
 |          15  | GPIO22 | N3  |          |         |     |
 |          16  | GPIO23 |     |       16 |         |     |
-|          17  | 3.3V   | VCC |          |      17 |     |
+|          17  | 3.3V   | VCC |          |         |     |
 |          18  | GPIO24 |     |       18 |         |     |
-|          20  | GND    |     |          |       6 |     |
