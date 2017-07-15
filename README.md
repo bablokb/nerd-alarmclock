@@ -8,5 +8,5 @@ A Pi-Zero W based alarm-clock for nerds with many unique functions:
  - play sounds or internet radio using bluetooth
  - uses a chat-bot for configuration
 
-Currently, this project is in the planning phase and no code is available.
-So stay tuned!
+Currently, this project is in the planning phase and only code fragments
+are available. So stay tuned!
