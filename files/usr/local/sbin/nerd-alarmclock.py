@@ -14,7 +14,7 @@
 import select, os, sys, syslog, signal, time
 import ConfigParser, threading
 
-from nclock import BotThread
+import nclock
 
 # --- helper functions   ---------------------------------------------------
 
@@ -36,30 +36,46 @@ def write_log(msg):
 # --------------------------------------------------------------------------
 
 
-# --------------------------------------------------------------------------
+# ---initialize objects   --------------------------------------------------
 
+def init(parser):
+  """ Initialize objects """
 
-# --------------------------------------------------------------------------
+  settings = nclock.Settings.Settings()
+  settings.config_parser = parser
 
-def start_threads(parser):
-  """ start all threads """
+  settings.led_controller = nclock.LedController.LedController()
+
+  settings.stop_event = threading.Event()
+
+  return settings
+
+# --- start all threads   --------------------------------------------------
+
+def start_threads(settings):
+  """ Start all threads """
   
   threads = []
-  stopEvent = threading.Event()
-  threads.append(stopEvent)
+  timeKeeperThread = nclock.TimeKeeperThread.TimeKeeperThread(settings)
+  timeKeeperThread.start()
+  threads.append(timeKeeperThread)
   
-  botThread = BotThread.BotThread(parser,stopEvent)
+  keyboardThread = nclock.KeyboardThread.KeyboardThread(settings)
+  keyboardThread.start()
+  threads.append(keyboardThread)
+
+  botThread = nclock.BotThread.BotThread(settings)
   botThread.start()
   threads.append(botThread)
   return threads
 
-# --------------------------------------------------------------------------
+# --- stop all threads   ---------------------------------------------------
 
-def stop_threads(threads):
-  """ stop all threads """
+def stop_threads(settings,threads):
+  """ Stop all threads """
 
   # send event to all threads
-  threads[0].set()
+  settings.stop_event.set()
 
   # wait for threads to terminate
   map(threading.Thread.join, threads[1:])
@@ -70,11 +86,11 @@ def stop_threads(threads):
 # --------------------------------------------------------------------------
 
 def signal_handler(_signo, _stack_frame):
-  """ signal-handler to cleanup threads """
+  """ Signal-handler to cleanup threads """
 
-  global threads
+  global threads, settings
   write_log("interrupt %d detected, exiting" % _signo)
-  stop_threads(threads)
+  stop_threads(settings,threads)
   sys.exit(0)
 
 # --- main program   ------------------------------------------------------
@@ -90,8 +106,11 @@ parser.read('/etc/nerd-alarmclock.conf')
 signal.signal(signal.SIGTERM, signal_handler)
 signal.signal(signal.SIGINT, signal_handler)
 
+# initialize system
+settings = init(parser)
+
 # create and start threads
-threads = start_threads(parser)
+threads = start_threads(settings)
 
 # --- main loop   ---------------------------------------------------------
 
