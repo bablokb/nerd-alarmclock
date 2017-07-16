@@ -41,13 +41,8 @@ def write_log(msg):
 def init(parser):
   """ Initialize objects """
 
-  settings = nclock.Settings.Settings()
-  settings.config_parser = parser
-
-  settings.led_controller = nclock.LedController.LedController()
-
-  settings.stop_event = threading.Event()
-
+  settings = nclock.Settings.Settings(parser)
+  settings.led_controller = nclock.LedController.LedController(settings)
   return settings
 
 # --- start all threads   --------------------------------------------------
@@ -62,8 +57,9 @@ def start_threads(settings):
   keyboardThread = nclock.KeyboardThread.KeyboardThread(settings)
   threads.append(keyboardThread)
 
-  botThread = nclock.BotThread.BotThread(settings)
-  threads.append(botThread)
+  if settings.get_value('BOT','active','0') != '0':
+    botThread = nclock.BotThread.BotThread(settings)
+    threads.append(botThread)
 
   map(threading.Thread.start, threads)
   return threads
