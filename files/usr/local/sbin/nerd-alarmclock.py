@@ -57,16 +57,15 @@ def start_threads(settings):
   
   threads = []
   timeKeeperThread = nclock.TimeKeeperThread.TimeKeeperThread(settings)
-  timeKeeperThread.start()
   threads.append(timeKeeperThread)
   
   keyboardThread = nclock.KeyboardThread.KeyboardThread(settings)
-  keyboardThread.start()
   threads.append(keyboardThread)
 
   botThread = nclock.BotThread.BotThread(settings)
-  botThread.start()
   threads.append(botThread)
+
+  map(threading.Thread.start, threads)
   return threads
 
 # --- stop all threads   ---------------------------------------------------
@@ -78,9 +77,9 @@ def stop_threads(settings,threads):
   settings.stop_event.set()
 
   # wait for threads to terminate
-  map(threading.Thread.join, threads[1:])
+  map(threading.Thread.join, threads)
   
-  #for thread in threads[1:]:
+  #for thread in threads:
   #  thread.stop()
 
 # --------------------------------------------------------------------------
