@@ -16,25 +16,25 @@ import ConfigParser, threading
 
 import nclock
 
-# --- helper functions   ---------------------------------------------------
+# --- helper class for logging to syslog   ---------------------------------
+
+class Msg(object):
+  """ Very basic message writer class """
+
+  # --- constructor   ------------------------------------------------------
+
+  def __init__(self,debug):
+    """ Constructor """
+    self._debug = debug
+    syslog.openlog("nerd-alarmclock")
+
+  def msg(self,text):
+    """ write message to the system log """ 
+    if self._debug == '1':
+      syslog.syslog(text)
 
 # --------------------------------------------------------------------------
-
-def write_log(msg):
-  """ write message to the system log """
-  
-  global debug
-  if debug == '1':
-    syslog.syslog(msg)
-
 # --------------------------------------------------------------------------
-
-
-# --------------------------------------------------------------------------
-
-
-# --------------------------------------------------------------------------
-
 
 # ---initialize objects   --------------------------------------------------
 
@@ -42,6 +42,7 @@ def init(parser):
   """ Initialize objects """
 
   settings = nclock.Settings.Settings(parser)
+  settings.log = Msg(settings.get_value('GLOBAL','debug',0))
   settings.led_controller = nclock.LedController.LedController(settings)
   return settings
 
@@ -84,25 +85,22 @@ def signal_handler(_signo, _stack_frame):
   """ Signal-handler to cleanup threads """
 
   global threads, settings
-  write_log("interrupt %d detected, exiting" % _signo)
+  settings.log.msg("interrupt %d detected, exiting" % _signo)
   stop_threads(settings,threads)
   sys.exit(0)
 
 # --- main program   ------------------------------------------------------
 
-debug='0'
-syslog.openlog("nerd-alarmclock")
-parser = ConfigParser.RawConfigParser()
-
 # read configuration
+parser = ConfigParser.RawConfigParser()
 parser.read('/etc/nerd-alarmclock.conf')
+
+# initialize system
+settings = init(parser)
 
 # setup signal handlers
 signal.signal(signal.SIGTERM, signal_handler)
 signal.signal(signal.SIGINT, signal_handler)
-
-# initialize system
-settings = init(parser)
 
 # create and start threads
 threads = start_threads(settings)
