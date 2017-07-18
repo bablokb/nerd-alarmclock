@@ -42,8 +42,9 @@ def init(parser):
   """ Initialize objects """
 
   settings = nclock.Settings.Settings(parser)
-  settings.log = Msg(settings.get_value('GLOBAL','debug',0))
-  settings.led_controller = nclock.LedController.LedController(settings)
+  settings.log     = Msg(settings.get_value('GLOBAL','debug',0))
+  settings.leds    = nclock.LedController.LedController(settings)
+  settings.display = nclock.DisplayController.DisplayController(settings)
   return settings
 
 # --- start all threads   --------------------------------------------------
