@@ -18,6 +18,7 @@ After=multi-user.target
  
 [Service]
 Type=simple
+User=nerdc
 ExecStart=/usr/local/sbin/nerd-alarmclock.py
 
 [Install]
