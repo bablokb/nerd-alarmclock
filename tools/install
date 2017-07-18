@@ -71,6 +71,14 @@ configure_system() {
     echo -e "[INFO] configuring /etc/modules" 2>&1
     echo "i2c-dev" >> /etc/modules
   fi
+
+  # create user
+  if ! grep -q "nerdc" /etc/passwd; then
+    echo -e "[INFO] create system-user nerdc:nerdc" 2>&1
+    groupadd -r nerdc
+    adduser --disabled-login --gecos "" --system --home /var/lib/nerdc nerdc
+    usermod -a -G gpio nerdc
+  fi
 }
 
 # --- activate service   ----------------------------------------------------
