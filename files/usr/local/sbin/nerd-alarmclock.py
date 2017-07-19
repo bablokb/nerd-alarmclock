@@ -16,7 +16,7 @@ import ConfigParser, threading
 
 import nclock
 
-# --- helper class for logging to syslog   ---------------------------------
+# --- helper class for logging to syslog/stderr   --------------------------
 
 class Msg(object):
   """ Very basic message writer class """
@@ -26,12 +26,27 @@ class Msg(object):
   def __init__(self,debug):
     """ Constructor """
     self._debug = debug
-    syslog.openlog("nerd-alarmclock")
+    self._lock = threading.Lock()
+    try:
+      if os.getpgrp() == os.tcgetpgrp(sys.stdout.fileno()):
+        self._syslog = False
+      else:
+        self._syslog = True
+      except:
+        self._syslog = True
+
+    if self._syslog:
+      syslog.openlog("nerd-alarmclock")
 
   def msg(self,text):
     """ write message to the system log """ 
     if self._debug == '1':
-      syslog.syslog(text)
+      with self._lock:
+        if self._syslog:
+          syslog.syslog(text)
+        else:
+          sys.stderr.write(text)
+          sys.stderr.flush()
 
 # --------------------------------------------------------------------------
 # --------------------------------------------------------------------------
