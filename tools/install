@@ -76,7 +76,8 @@ configure_system() {
   if ! grep -q "nerdc" /etc/passwd; then
     echo -e "[INFO] create system-user nerdc:nerdc" 2>&1
     groupadd -r nerdc
-    adduser --disabled-login --gecos "" --system --home /var/lib/nerdc nerdc
+    adduser --disabled-login --gecos "" --system \
+                                        --home /var/lib/nerd-alarmclock nerdc 
     usermod -a -G gpio nerdc
   fi
 }
