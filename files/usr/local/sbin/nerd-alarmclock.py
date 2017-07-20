@@ -106,6 +106,7 @@ def signal_handler(_signo, _stack_frame):
   global threads, settings
   settings.log.msg("interrupt %d detected, exiting" % _signo)
   stop_threads(settings,threads)
+  settings.save()
   sys.exit(0)
 
 # --- main program   ------------------------------------------------------
