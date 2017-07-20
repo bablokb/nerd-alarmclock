@@ -1,0 +1,46 @@
+{"day_start": "07:00",
+ "day_end":   "22:00",
+
+ "led_brightness_day": 2,
+ "led_brightness_night": 1,
+
+ "display_brightness_day": 3,
+ "display_brightness_night": 1,
+
+ "alarm": [
+    { "nr"    : 1,
+      "name"  : "ALM1",
+      "state" : "off",
+      "time"  : "06:15",
+      "days"  : [1,2,3,4,5],
+      "bell1" : [{"name": "sunrise", "duration": 10}],
+      "bell2" : [{"name": "sound1", "duration": 5},
+                 {"name": "police", "duration": 5}]
+    },
+    { "nr"    : 2,
+      "name"  : "ALM2",
+      "state" : "off",
+      "time"  : "07:00",
+      "days"  : [6,7],
+      "bell1" : [{"name": "sunrise", "duration": 10}],
+      "bell2" : []
+    },
+    { "nr"    : 3,
+      "name"  : "ALM3",
+      "state" : "off",
+      "time"  : "06:35",
+      "days"  : [1,2,3,4,5],
+      "bell1" : [{"name": "sunrise", "duration": 10}],
+      "bell2" : [{"name": "sound1", "duration": 5},
+                 {"name": "police", "duration": 5}]
+    },
+    { "nr"    : 4,
+      "name"  : "ALM4",
+      "state" : "off",
+      "time"  : "06:35",
+      "days"  : [1,2,3,4,5,6,7],
+      "bell1" : [],
+      "bell2" : []
+    }
+  ]
+}
