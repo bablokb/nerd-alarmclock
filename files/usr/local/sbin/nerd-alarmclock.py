@@ -32,8 +32,8 @@ class Msg(object):
         self._syslog = False
       else:
         self._syslog = True
-      except:
-        self._syslog = True
+    except:
+      self._syslog = True
 
     if self._syslog:
       syslog.openlog("nerd-alarmclock")
@@ -46,6 +46,7 @@ class Msg(object):
           syslog.syslog(text)
         else:
           sys.stderr.write(text)
+          sys.stderr.write("\n")
           sys.stderr.flush()
 
 # --------------------------------------------------------------------------
