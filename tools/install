@@ -9,7 +9,7 @@
 #
 # --------------------------------------------------------------------------
 
-PACKAGES="python-blinkt python-fourletterphat"
+PACKAGES="python-pip python-blinkt python-fourletterphat"
 PROJECT="nerd-alarmclock"
 
 # --- basic packages   ------------------------------------------------------
@@ -30,6 +30,8 @@ install_packages() {
     apt-get update
     apt-get -y install $PACKAGES
   fi
+
+  pip list | grep -q telepot || pip install telepot
 }
 
 # --- install specific files   ----------------------------------------------
@@ -43,6 +45,8 @@ install_files() {
     mv "/etc/$PROJECT.conf" "/etc/$PROJECT.conf.$rand"
   fi
 
+  mkdir -p /var/lib/nerd-alarmclock \
+           /usr/local/lib/python2.7/site-packages/nclock
   for f in `find $(dirname "$0")/../files/ -type f`; do
     cp "$f" "${f#*files}"
     chown root:root "${f#*files}"
@@ -63,7 +67,7 @@ install_files() {
 # --- configure system   ----------------------------------------------------
 
 configure_system() {
-  if ! grep -q "^dtparam=i2c_arm=on"; then do
+  if ! grep -q "^dtparam=i2c_arm=on" /boot/config.txt ; then
     echo -e "[INFO] configuring /boot/config.txt" 2>&1
     echo "dtparam=i2c_arm=on" >> /boot/config.txt
   fi
@@ -76,9 +80,9 @@ configure_system() {
   if ! grep -q "nerdc" /etc/passwd; then
     echo -e "[INFO] create system-user nerdc:nerdc" 2>&1
     groupadd -r nerdc
-    adduser --disabled-login --gecos "" --system \
+    adduser --disabled-login --gecos "" --system --group \
                                         --home /var/lib/nerd-alarmclock nerdc 
-    usermod -a -G gpio nerdc
+    usermod -a -G gpio,i2c nerdc
   fi
 }
 
