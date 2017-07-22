@@ -84,6 +84,7 @@ configure_system() {
                                         --home /var/lib/nerd-alarmclock nerdc 
     usermod -a -G gpio,i2c nerdc
   fi
+  chown -R nerdc:nerdc /var/lib/nerd-alarmclock
 }
 
 # --- activate service   ----------------------------------------------------
