@@ -30,7 +30,7 @@ class Msg(object):
     try:
       if os.getpgrp() == os.tcgetpgrp(sys.stdout.fileno()):
         self._syslog = False
-        self._debug  = True
+        self._debug  = "1"
       else:
         self._syslog = True
     except:
