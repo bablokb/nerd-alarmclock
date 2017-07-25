@@ -1,46 +1,35 @@
-{"day_start": "07:00",
- "day_end":   "22:00",
+{"day.start": "07:00",
+ "day.end":   "22:00",
 
- "led_brightness_day": 2,
- "led_brightness_night": 1,
+ "led.brightness.day": 2,
+ "led.brightness.night": 1,
 
- "display_brightness_day": 3,
- "display_brightness_night": 1,
+ "display.brightness.day": 3,
+ "display.brightness.night": 1,
 
- "alarm": [
-    { "nr"    : 1,
-      "name"  : "ALM1",
-      "state" : "disabled",
-      "time"  : "06:15",
-      "days"  : [1,2,3,4,5],
-      "bell1" : [{"name": "sunrise", "duration": 10}],
-      "bell2" : [{"name": "sound1", "duration": 5},
-                 {"name": "police", "duration": 5}]
-    },
-    { "nr"    : 2,
-      "name"  : "ALM2",
-      "state" : "disabled",
-      "time"  : "07:00",
-      "days"  : [6,7],
-      "bell1" : [{"name": "sunrise", "duration": 10}],
-      "bell2" : []
-    },
-    { "nr"    : 3,
-      "name"  : "ALM3",
-      "state" : "disabled",
-      "time"  : "06:35",
-      "days"  : [1,2,3,4,5],
-      "bell1" : [{"name": "sunrise", "duration": 10}],
-      "bell2" : [{"name": "sound1", "duration": 5},
-                 {"name": "police", "duration": 5}]
-    },
-    { "nr"    : 4,
-      "name"  : "ALM4",
-      "state" : "disabled",
-      "time"  : "06:35",
-      "days"  : [1,2,3,4,5,6,7],
-      "bell1" : [],
-      "bell2" : []
-    }
-  ]
+ "alarm.1.name":    "ALM1",
+ "alarm.1.state":   "disabled",
+ "alarm.1.time":    "06:15",
+ "alarm.1.days":    [1,2,3,4,5],
+ "alarm.1.pattern": [{"name": "sunrise", "duration": 10},
+                     {"name": "sound1.mp3", "duration": 5}
+                    ],
+
+ "alarm.2.name":    "ALM2",
+ "alarm.2.state":   "disabled",
+ "alarm.2.time":    "08:00",
+ "alarm.2.days":    [6,7],
+ "alarm.2.pattern": [{"name": "sunrise", "duration": 10}],
+
+ "alarm.3.name":    "ALM3",
+ "alarm.3.state":   "disabled",
+ "alarm.3.time":    "",
+ "alarm.3.days":    [],
+ "alarm.3.pattern": [],
+
+ "alarm.4.name":    "ALM4",
+ "alarm.4.state":   "disabled",
+ "alarm.4.time":    "",
+ "alarm.4.days":    [],
+ "alarm.4.pattern": []
 }
