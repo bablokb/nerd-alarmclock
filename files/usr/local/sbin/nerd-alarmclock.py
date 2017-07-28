@@ -64,6 +64,7 @@ def init(parser):
 
   settings.leds    = nclock.LedController.LedController(settings)
   settings.display = nclock.DisplayController.DisplayController(settings)
+  settings.alarms  = nclock.AlarmController.AlarmController(settings)
   return settings
 
 # --- start all threads   --------------------------------------------------
