@@ -9,7 +9,7 @@
 #
 # --------------------------------------------------------------------------
 
-PACKAGES="python-pip python-blinkt python-fourletterphat"
+PACKAGES="wiringpi python-pip python-blinkt python-fourletterphat"
 PROJECT="nerd-alarmclock"
 
 # --- basic packages   ------------------------------------------------------
