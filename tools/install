@@ -87,6 +87,18 @@ configure_system() {
   chown -R nerdc:nerdc /var/lib/nerd-alarmclock
 }
 
+# --- configure internal pullups   ------------------------------------------
+
+configure_pullups() {
+  if ! test -f /etc/pullups.nerdc; then
+    gpio -g mode  4 tri
+    gpio -g mode 17 tri
+    gpio -g mode 22 tri
+    gpio -g mode 27 tri
+    touch /etc/pullups.nerdc
+  fi
+}
+
 # --- activate service   ----------------------------------------------------
 
 enable_services() {
@@ -99,6 +111,7 @@ enable_services() {
 install_packages
 install_files
 configure_system
+configure_pullups
 
 echo "Please edit /etc/$PROJECT.conf"
 echo "Restart the system to activate changes"
