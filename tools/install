@@ -112,6 +112,7 @@ install_packages
 install_files
 configure_system
 configure_pullups
+enable_services
 
 echo "Please edit /etc/$PROJECT.conf"
 echo "Restart the system to activate changes"
