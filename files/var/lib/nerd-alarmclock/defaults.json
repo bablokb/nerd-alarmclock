@@ -1,0 +1,50 @@
+{"_comment0": "Default settings for nerd-alarmclock",
+ "_comment1": "Don't change this file",
+ "_comment2": "change settings.json instead!",
+
+ "day.start": "08:00",
+ "day.end":   "22:00",
+
+ "led.mode"            : "mode_dom", 
+ "led.brightness.day"  : 2,
+ "led.brightness.night": 1,
+
+ "display.mode"            : "mode_time",
+ "display.brightness.day"  : 3,
+ "display.brightness.night": 1,
+
+ "speaker.volume.day"    : 40,
+ "speaker.volume.night"  : 20,
+
+ "alarm.1.name"   : "ALM1",
+ "alarm.1.state"  : "disabled",
+ "alarm.1.time"   : "12:00",
+ "alarm.1.days"   : [1,2,3,4,5,6,7],
+ "alarm.1.led"    : {"name": "sunrise", "duration": 10},
+ "alarm.1.speaker": {"name": "", "duration": 10},
+ "alarm.1.display": {"name": "", "duration": 10},
+
+ "alarm.2.name"   : "ALM2",
+ "alarm.2.state"  : "disabled",
+ "alarm.2.time"   : "12:00",
+ "alarm.2.days"   : [1,2,3,4,5,6,7],
+ "alarm.2.led"    : {"name": "police", "duration": 10},
+ "alarm.2.speaker": {"name": "", "duration": 10},
+ "alarm.2.display": {"name": "", "duration": 10},
+
+ "alarm.3.name"   : "ALM3",
+ "alarm.3.state"  : "disabled",
+ "alarm.3.time"   : "12:00",
+ "alarm.3.days"   : [1,2,3,4,5,6,7],
+ "alarm.3.led"    : {"name": "police", "duration": 10},
+ "alarm.3.speaker": {"name": "", "volume": 40, "duration": 10},
+ "alarm.3.display": {"name": "", "duration": 10},
+
+ "alarm.4.name"   : "ALM4",
+ "alarm.4.state"  : "disabled",
+ "alarm.4.time"   : "12:00",
+ "alarm.4.days"   : [1,2,3,4,5,6,7],
+ "alarm.4.led"    : {"name": "police", "duration": 10},
+ "alarm.4.speaker": {"name": "", "volume": 40, "duration": 10},
+ "alarm.4.display": {"name": "", "duration": 10}
+}
