@@ -58,8 +58,8 @@ class Msg(object):
 def init(parser):
   """ Initialize objects """
 
-  settings = nclock.Settings.Settings(parser)
-  settings.log     = Msg(settings.get_value('GLOBAL','debug',0))
+  settings     = nclock.Settings.Settings(parser)
+  settings.log = Msg(settings.get_value('GLOBAL','debug',0))
   settings.load()
 
   settings.leds    = nclock.LedController.LedController(settings)
