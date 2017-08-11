@@ -11,7 +11,7 @@
 #
 # --------------------------------------------------------------------------
 
-import select, os, sys, syslog, signal, time
+import select, os, sys, syslog, signal, time, locale
 import ConfigParser, threading
 
 import nclock
@@ -108,10 +108,13 @@ def signal_handler(_signo, _stack_frame):
   global threads, settings
   settings.log.msg("interrupt %d detected, exiting" % _signo)
   stop_threads(settings,threads)
-  settings.save()
+  settings.save(wait=False)
   sys.exit(0)
 
 # --- main program   ------------------------------------------------------
+
+# set local to default from environment
+locale.setlocale(locale.LC_ALL, '')
 
 # read configuration
 parser = ConfigParser.RawConfigParser()
