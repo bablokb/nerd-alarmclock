@@ -19,7 +19,7 @@ After=multi-user.target
 [Service]
 Type=simple
 User=nerdc
-ExecStartPre=/usr/local/sbin/nerd-gpios.py
+ExecStartPre=/usr/local/sbin/nerd-gpios.sh
 ExecStart=/usr/local/sbin/nerd-alarmclock.py
 
 [Install]
