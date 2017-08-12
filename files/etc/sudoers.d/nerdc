@@ -1,1 +1,1 @@
-nerdc ALL=(ALL) NOPASSWD: /sbin/halt, /sbin/reboot
+nerdc ALL=(ALL) NOPASSWD: /sbin/halt, /sbin/reboot, /usr/bin/systemctl restart nerd-alarmclock.service
