@@ -13,15 +13,12 @@
  "display.brightness.day"  : 3,
  "display.brightness.night": 1,
 
- "speaker.volume.day"    : 40,
- "speaker.volume.night"  : 20,
-
  "alarm.1.name"   : "ALM1",
  "alarm.1.state"  : "disabled",
  "alarm.1.time"   : "12:00",
  "alarm.1.days"   : [1,2,3,4,5,6,7],
  "alarm.1.led"    : {"name": "sunrise", "duration": "10"},
- "alarm.1.speaker": {"name": "", "duration": "10"},
+ "alarm.1.sound"  : {"name": "", "duration": "10"},
  "alarm.1.display": {"name": "text", "text": "Good Morning", "duration": "2"},
 
  "alarm.2.name"   : "ALM2",
@@ -29,7 +26,7 @@
  "alarm.2.time"   : "12:00",
  "alarm.2.days"   : [1,2,3,4,5,6,7],
  "alarm.2.led"    : {"name": "bluelights", "duration": "10"},
- "alarm.2.speaker": {"name": "", "duration": "10"},
+ "alarm.2.sound"  : {"name": "", "duration": "10"},
  "alarm.2.display": {"name": "daydatetime", "duration": "2"},
 
  "alarm.3.name"   : "ALM3",
@@ -37,7 +34,7 @@
  "alarm.3.time"   : "12:00",
  "alarm.3.days"   : [1,2,3,4,5,6,7],
  "alarm.3.led"    : {"name": "redlights", "duration": "10"},
- "alarm.3.speaker": {"name": "", "volume": 40, "duration": "10"},
+ "alarm.3.sound"  : {"name": "", "volume": 40, "duration": "10"},
  "alarm.3.display": {"name": "daydatetime", "duration": "2"},
 
  "alarm.4.name"   : "ALM4",
@@ -45,6 +42,6 @@
  "alarm.4.time"   : "12:00",
  "alarm.4.days"   : [1,2,3,4,5,6,7],
  "alarm.4.led"    : {"name": "whitelights", "duration": "10"},
- "alarm.4.speaker": {"name": "", "volume": 40, "duration": "10"},
+ "alarm.4.sound"  : {"name": "", "volume": 40, "duration": "10"},
  "alarm.4.display": {"name": "daydatetime", "duration": "2"}
 }
