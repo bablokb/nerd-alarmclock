@@ -5,11 +5,11 @@
  "day.start": "08:00",
  "day.end":   "22:00",
 
- "led.mode"            : "mode_dom", 
+ "led.mode"            : "dom", 
  "led.brightness.day"  : 1,
  "led.brightness.night": 1,
 
- "display.mode"            : "mode_time",
+ "display.mode"            : "time",
  "display.brightness.day"  : 3,
  "display.brightness.night": 1,
 
