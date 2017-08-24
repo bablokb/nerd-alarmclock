@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-08-24 08:43+CEST\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:61
+msgid ""
+"Hi Bernhard,\n"
+"this is your NerdClockController.\n"
+"\n"
+"What can I do for you?"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:73
+msgid ""
+"Hi Bernhard,\n"
+"use /settings to see the current settings,\n"
+"use /restart to restart the clock,\n"
+"use /reboot to reboot the system,\n"
+"use /shutdown to shutdown the system,\n"
+"use /alarm to set alarm-attributes."
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:89
+msgid "sorry, not implemented yet!"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:98
+msgid "Really restart?"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:109
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:143
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:177
+msgid "invalid use!"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:117
+msgid "canceled restart"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:120
+msgid "restarting the clock"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:132
+msgid "Really reboot?"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:151
+msgid "canceled reboot"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:154
+msgid "rebooting the system"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:166
+msgid "Really shutdown?"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:185
+msgid "canceled shutdown"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:188
+msgid "shutting down the system"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:208
+msgid "Select alarm"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:246
+msgid "Select attribute"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:262
+msgid "enable"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:264
+msgid "disabled"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:268
+msgid "Change state of alarm"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:285
+msgid "Set alarm time"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:292
+msgid "new time: %s"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:316
+msgid "Set alarm days"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:326
+msgid "selected days: %s"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:353
+msgid "Select LED-alarm"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:370
+msgid "Set alarm duration"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:377
+msgid "new duration: %s"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:390
+msgid "sorry, but I don't understand '%s'"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:455
+msgid "No"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:457
+msgid "Yes"
+msgstr ""
+
