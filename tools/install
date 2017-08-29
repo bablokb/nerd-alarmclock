@@ -9,7 +9,7 @@
 #
 # --------------------------------------------------------------------------
 
-PACKAGES="wiringpi python-pip python-blinkt python-fourletterphat"
+PACKAGES="wiringpi python-pip python-pygame python-blinkt python-fourletterphat"
 PROJECT="nerd-alarmclock"
 
 # --- basic packages   ------------------------------------------------------
@@ -45,11 +45,12 @@ install_files() {
     mv "/etc/$PROJECT.conf" "/etc/$PROJECT.conf.$rand"
   fi
 
-  mkdir -p /var/lib/nerd-alarmclock \
-           /usr/local/lib/python2.7/site-packages/nclock
-  for f in `find $(dirname "$0")/../files/ -type f`; do
-    cp "$f" "${f#*files}"
-    chown root:root "${f#*files}"
+  for f in `find $(dirname "$0")/../files/ -type f -not -name "*.pyc"`; do
+    target="${f#*files}"
+    target_dir="${target%/*}"
+    [ ! -d "$target_dir" ] && mkdir -p "$target_dir"
+    cp "$f" "$target"
+    chown root:root "$target"
   done
 
   chmod 755 "/usr/local/sbin/$PROJECT.py"
