@@ -2,8 +2,10 @@
 # Systemd service Definition for nerd-alarmclock.service.
 #
 # The service just starts the script /usr/local/sbin/nerd-alarmclock.py
-#
 # Please edit /etc/nerd-alarmclock.conf to configure the script.
+#
+# Note: No explicit dependency on gpio-poll.service (e.g. Wants= or Requires=),
+#       because we can still run the nerd-clock, albeit without keypad
 #
 # Author: Bernhard Bablok
 # License: GPL3
