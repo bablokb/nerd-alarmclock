@@ -18,7 +18,7 @@
  "alarm.1.time"   : "12:00",
  "alarm.1.days"   : [1,2,3,4,5,6,7],
  "alarm.1.led"    : {"name": "sunrise", "duration": "10"},
- "alarm.1.sound"  : {"name": "", "volume","duration": "10"},
+ "alarm.1.sound"  : {"name": "", "volume": 40,"duration": "10"},
  "alarm.1.display": {"name": "text", "text": "Good Morning", "duration": "2"},
 
  "alarm.2.name"   : "ALM2",
@@ -26,7 +26,7 @@
  "alarm.2.time"   : "12:00",
  "alarm.2.days"   : [1,2,3,4,5,6,7],
  "alarm.2.led"    : {"name": "bluelights", "duration": "10"},
- "alarm.2.sound"  : {"name": "", "duration": "10"},
+ "alarm.2.sound"  : {"name": "", "volume": 40, "duration": "10"},
  "alarm.2.display": {"name": "daydatetime", "duration": "2"},
 
  "alarm.3.name"   : "ALM3",
