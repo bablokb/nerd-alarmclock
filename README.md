@@ -17,7 +17,8 @@ Table of Contents
   3. [Hardware](#hardware "Hardware")
   4. [Prerequisites](#prerequisites "Prerequisites")
   5. [Configuration](#configuration "Configuration")
-  6. [Hacking](#Hacking "Hacking")
+  6. [Usage](#usage "Usage")
+  7. [Hacking](#Hacking "Hacking")
 
 
 News
@@ -108,7 +109,8 @@ running the clock. In this file, you at least have to edit the section
 provided by *BotFather*. To query your own id, edit the python-script
 `tools/simplebot.py`, start it and exchange some messages with the bot.
 The script will print all messages and you will find your own id in the
-messages.
+messages (extract the "from-id").
+
 
 ### Bot configuration ###
 
@@ -123,9 +125,48 @@ register the following commands for your bot with *BotFather*:
   - /help      provide help
   - /settings  show settings
 
+This is not strictly necessary, but it greatly simplifies interaction with
+the bot.
+
+
 ### Adding sounds ###
 
 To play music or sounds during an alarm, you have to add the files
 to the directory `/var/lib/nerd-clock/sounds`. The nerd-alarmclock uses
 the program `mpg123` to play the files, so all formats supported by mpg123
 should be fine.
+
+
+### Manual configuration ###
+
+Program defaults are in the file `/var/lib/nerd-alarmclock/defaults.json`.
+You should not edit this file directly (unless you know what you are
+doing). After first run, the settings are saved in
+`/var/lib/nerd-alarmclock/settings.json`. You can edit this file
+manually, but you should make sure the clock-service is stopped before
+doing so (it will be otherwise overwritten).
+
+There are still some settings which you typically only change very
+seldomly and these settings are not exposed by the config-interface of the
+bot, so you have to change the manually:
+
+  - **day.start**: start of day-mode (e.g. brightness depends on this)
+  - **day.end**:   end   of day-mode (e.g. brightness depends on this)
+  - some special options to tweak the alarms
+
+
+Usage
+-----
+
+After initial configuration as explained above, restart the system and then
+it should just run. Use the bot to configure alarms and the buttons to
+enable or disable the alarms. See [keyboard usage](doc/keyboard.md
+"Keyboard Usage") for details about the behaviour of the buttons.
+
+
+Hacking
+-------
+
+If you want to change the code and adapt it for your needs, you need some
+python know-how and you have to understand the structure of the program.
+For details read the [hacking-guide](doc/hacking.md "Hacking-Guide").
