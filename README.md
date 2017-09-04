@@ -12,11 +12,12 @@ A Pi-Zero W based alarm-clock for nerds with many unique functions:
 Table of Contents
 -----------------
 
-  1 [News and Status](#news "News")
-  2 [Installation](#install "Installation")
-  2 [Hardware](#hardware "Hardware")
-  2 [Prerequisites](#prerequisites "Prerequisites")
-  3 [Configuration](#configuration "Configuration")
+  1. [News and Status](#news "News")
+  2. [Installation](#install "Installation")
+  3. [Hardware](#hardware "Hardware")
+  4. [Prerequisites](#prerequisites "Prerequisites")
+  5. [Configuration](#configuration "Configuration")
+  6. [Hacking](#Hacking "Hacking")
 
 
 News
@@ -24,7 +25,7 @@ News
 
 The software is almost finished, the documentation is still work in progress.
 A detailed list of functions (current and planned) is available in the
-document [Functionality](doc/functions.md "Functionality").
+document [Features](doc/features.md "Features").
 
 ### Version 1 /  Sept, 2017 ###
 
@@ -60,7 +61,7 @@ From hardware-side, you need
     from ebay or Amazon marketplace.
   - a real-time-clock (DS3231, optional)
   - jumper cable or an extension board
-    (e.g. a [Mini Black HAT Hack3r](doc/board.jpg "Extension board")
+    (e.g. a [Mini Black HAT Hack3r](doc/board.jpg "Extension board"))
 
 Since you need the GPIOs for both hardware extensions, you cannot just
 plug in the LED-strip or the hat on the Pi. You can either
@@ -91,6 +92,10 @@ This will pull-in all dependencies, install the software, create technical
 users and do a basic configuration of the system. Since the install command
 changes the file `/boot/config.txt`, you need a reboot to activate the changes.
 
+Note that the installation of the gpio-poll-service will ask you to configure
+the service (file `/etc/gpio-poll.conf`), but this project already
+provides a suitable configuration file.
+
 
 Configuration
 -------------
@@ -99,4 +104,28 @@ Configuration
 
 Edit the file `/etc/nerd-alarmclock.conf` to configure the systemd-service
 running the clock. In this file, you at least have to edit the section
-`[BOT]` and enter your own user-id and the id of your bot.
+`[BOT]` and enter your own user-id and the id of your bot. The latter is
+provided by *BotFather*. To query your own id, edit the python-script
+`tools/simplebot.py`, start it and exchange some messages with the bot.
+The script will print all messages and you will find your own id in the
+messages.
+
+### Bot configuration ###
+
+The bot of the alarmclock uses a predefined set of commands. You should
+register the following commands for your bot with *BotFather*:
+
+  - /alarm     configure alarms
+  - /restart   restart the clock
+  - /reboot    reboot the system
+  - /shutdown  shutdown the system
+  - /start     start a dialog with the bot
+  - /help      provide help
+  - /settings  show settings
+
+### Adding sounds ###
+
+To play music or sounds during an alarm, you have to add the files
+to the directory `/var/lib/nerd-clock/sounds`. The nerd-alarmclock uses
+the program `mpg123` to play the files, so all formats supported by mpg123
+should be fine.
