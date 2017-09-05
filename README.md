@@ -52,15 +52,13 @@ Hardware
 From hardware-side, you need
 
   - a Pi with internet access (a Pi-Zero-W will do fine)
-  - the [LED-strip *Blinkt!* from Pimoroni](doc/blinkt.jpg "Blinkt!")
-  - the
-    [segment-display *Four Letter pHat*](doc/4letterhat.jpg "Four-Letter-pHat")
+  - the [LED-strip *Blinkt!* from Pimoroni](https://shop.pimoroni.com/products/blinkt "Blinkt!")
+  - the [segment-display *Four Letter pHat*](https://shop.pimoroni.com/products/four-letter-phat "Four-Letter-pHat")
     from the same manufacturer
-  - four buttons, e.g. a  cheap [4-key keypad](doc/keypad.jpg) available
+  - four buttons, e.g. a cheap [4-key keypad](doc/keypad.jpg) available
     from ebay or Amazon marketplace.
   - a real-time-clock (DS3231, optional)
-  - jumper cable or an extension board
-    (e.g. a [Mini Black HAT Hack3r](doc/board.jpg "Extension board")
+  - jumper cable or an extension board (e.g. a [Mini Black HAT Hack3r](https://shop.pimoroni.com/products/mini-black-hat-hack3r "Extension board")
 
 Since you need the GPIOs for both hardware extensions, you cannot just
 plug in the LED-strip or the hat on the Pi. You can either
