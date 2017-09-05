@@ -10,7 +10,7 @@ Implemented
   - Brightness of the display and the LED strip is configurable
     (off and four levels)
   - Brightness independently configurable for "day" and for "night" with
-    automatich switching
+    automatic switching
   - Support four alarms
   - Every alarm is configurable
     * time
@@ -19,6 +19,8 @@ Implemented
     * type of light-alarm to show
     * type of display-alarm to show (e.g. some running text)
     * song to play
+    * volume
+    * fade-in time (from 0 to requested volume)
   - basic operation using four buttons
     * turn alarm on or off or stop a running alarm
     * cycle through display brightness
