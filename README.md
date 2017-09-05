@@ -12,11 +12,11 @@ A Pi-Zero W based alarm-clock for nerds with many unique functions:
 Table of Contents
 -----------------
 
-  1 [News and Status](#news "News")
-  2 [Installation](#install "Installation")
-  2 [Hardware](#hardware "Hardware")
-  2 [Prerequisites](#prerequisites "Prerequisites")
-  3 [Configuration](#configuration "Configuration")
+1. [News and Status](#news "News")
+2. [Installation](#install "Installation")
+3. [Hardware](#hardware "Hardware")
+4. [Prerequisites](#prerequisites "Prerequisites")
+5. [Configuration](#configuration "Configuration")
 
 
 News
