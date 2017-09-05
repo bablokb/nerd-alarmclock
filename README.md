@@ -12,11 +12,11 @@ A Pi-Zero W based alarm-clock for nerds with many unique functions:
 Table of Contents
 -----------------
 
-  1 [News and Status](#news "News")
-  2 [Installation](#install "Installation")
-  2 [Hardware](#hardware "Hardware")
-  2 [Prerequisites](#prerequisites "Prerequisites")
-  3 [Configuration](#configuration "Configuration")
+1. [News and Status](#news "News")
+2. [Installation](#install "Installation")
+3. [Hardware](#hardware "Hardware")
+4. [Prerequisites](#prerequisites "Prerequisites")
+5. [Configuration](#configuration "Configuration")
 
 
 News
@@ -34,9 +34,9 @@ First productive version (planned).
 Prerequisites
 -------------
 
-Besides the hardware-modules listed in section [Hardware](# hardware "Hardware")
+Besides the hardware-modules listed in section [Hardware](#hardware "Hardware")
 and the software-environment described in
-[Installation](# install "Installation") there are no special prerequisites
+[Installation](#install "Installation") there are no special prerequisites
 with the exception of a telegram ID and your own telegram-bot.
 If you don't want to use telegram you either have to configure the alarms
 using ssh, or wait for the yet to come web-interface.
@@ -52,15 +52,13 @@ Hardware
 From hardware-side, you need
 
   - a Pi with internet access (a Pi-Zero-W will do fine)
-  - the [LED-strip *Blinkt!* from Pimoroni](doc/blinkt.jpg "Blinkt!")
-  - the
-    [segment-display *Four Letter pHat*](doc/4letterhat.jpg "Four-Letter-pHat")
+  - the [LED-strip *Blinkt!* from Pimoroni](https://shop.pimoroni.com/products/blinkt "Blinkt!")
+  - the [segment-display *Four Letter pHat*](https://shop.pimoroni.com/products/four-letter-phat "Four-Letter-pHat")
     from the same manufacturer
-  - four buttons, e.g. a  cheap [4-key keypad](doc/keypad.jpg) available
+  - four buttons, e.g. a cheap [4-key keypad](doc/keypad.jpg) available
     from ebay or Amazon marketplace.
   - a real-time-clock (DS3231, optional)
-  - jumper cable or an extension board
-    (e.g. a [Mini Black HAT Hack3r](doc/board.jpg "Extension board")
+  - jumper cable or an extension board (e.g. a [Mini Black HAT Hack3r](https://shop.pimoroni.com/products/mini-black-hat-hack3r "Extension board"))
 
 Since you need the GPIOs for both hardware extensions, you cannot just
 plug in the LED-strip or the hat on the Pi. You can either
