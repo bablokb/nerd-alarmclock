@@ -58,7 +58,7 @@ From hardware-side, you need
   - four buttons, e.g. a cheap [4-key keypad](doc/keypad.jpg) available
     from ebay or Amazon marketplace.
   - a real-time-clock (DS3231, optional)
-  - jumper cable or an extension board (e.g. a [Mini Black HAT Hack3r](https://shop.pimoroni.com/products/mini-black-hat-hack3r "Extension board")
+  - jumper cable or an extension board (e.g. a [Mini Black HAT Hack3r](https://shop.pimoroni.com/products/mini-black-hat-hack3r "Extension board"))
 
 Since you need the GPIOs for both hardware extensions, you cannot just
 plug in the LED-strip or the hat on the Pi. You can either
