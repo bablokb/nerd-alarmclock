@@ -99,7 +99,7 @@ configure_system() {
     groupadd -r nerdc
     adduser --disabled-login --gecos "" --system --group \
                                         --home /var/lib/nerd-alarmclock nerdc 
-    usermod -a -G gpio,i2c nerdc
+    usermod -a -G gpio,i2c,audio nerdc
   fi
   chown -R nerdc:nerdc /var/lib/nerd-alarmclock
 }
