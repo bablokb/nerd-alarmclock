@@ -34,9 +34,9 @@ First productive version (planned).
 Prerequisites
 -------------
 
-Besides the hardware-modules listed in section [Hardware](# hardware "Hardware")
+Besides the hardware-modules listed in section [Hardware](#hardware "Hardware")
 and the software-environment described in
-[Installation](# install "Installation") there are no special prerequisites
+[Installation](#install "Installation") there are no special prerequisites
 with the exception of a telegram ID and your own telegram-bot.
 If you don't want to use telegram you either have to configure the alarms
 using ssh, or wait for the yet to come web-interface.
