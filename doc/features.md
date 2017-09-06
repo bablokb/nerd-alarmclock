@@ -18,7 +18,7 @@ Implemented
     * duration
     * type of light-alarm to show
     * type of display-alarm to show (e.g. some running text)
-    * song to play
+    * song/playlist to play (playlists also support internet-radio)
     * volume
     * fade-in time (from 0 to requested volume)
   - basic operation using four buttons
@@ -39,6 +39,6 @@ Planned
   - Add a web-interface to be independent from telegram
   - Add a snooze-button (for snooze and other special functions)
   - Add an IR-receiver and process commands from a remote-control
-  - Support internet-radio (for alarms and just for playing music)
+  - Support internet-radio (just for playing music, independent of alarms)
+  - show metadata on the display
   - Add a knob to adust volume
-  
