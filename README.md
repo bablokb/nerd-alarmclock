@@ -133,7 +133,9 @@ the bot.
 To play music or sounds during an alarm, you have to add the files
 to the directory `/var/lib/nerd-clock/sounds`. The nerd-alarmclock uses
 the program `mpg123` to play the files, so all formats supported by mpg123
-should be fine.
+should be fine. If you want to play an internet-radio station, add the url
+to a file with the extension `m3u` (playlist). Note that mpg123 does not
+support nested playlists.
 
 
 ### Manual configuration ###
