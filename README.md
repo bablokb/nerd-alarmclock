@@ -116,13 +116,15 @@ messages (extract the "from-id").
 The bot of the alarmclock uses a predefined set of commands. You should
 register the following commands for your bot with *BotFather*:
 
-  - /alarm     configure alarms
-  - /restart   restart the clock
-  - /reboot    reboot the system
-  - /shutdown  shutdown the system
-  - /start     start a dialog with the bot
-  - /help      provide help
-  - /settings  show settings
+| Command | Description |
+| --- | --- |
+| `/alarm` | Configure alarms |
+| `/restart` | Restart the clock |
+| `/reboot` | Reboot the system |
+| `/shutdown` | Shutdown the system |
+| `/start` | Start a dialog with the bot |
+| `/help` | Provide help |
+| `/settings` | Show settings |
 
 This is not strictly necessary, but it greatly simplifies interaction with
 the bot.
