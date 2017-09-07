@@ -8,8 +8,7 @@ A Pi-Zero W based alarm-clock for nerds with many unique functions:
  - play sounds or internet radio
  - use a chat-bot for configuration
 
-![the alarm-clock in a prototype housing](doc/prototype.jpg
-“Alarm-Clock in a prototype housing”)
+![the alarm-clock in a prototype housing](doc/prototype.jpg “Alarm-Clock in a prototype housing”)
 
 Table of Contents
 -----------------
