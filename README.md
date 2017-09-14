@@ -25,13 +25,21 @@ Table of Contents
 News
 ----
 
-The software is almost finished, the documentation is still work in progress.
+As always, the software and documentation is work in progress.
 A detailed list of functions (current and planned) is available in the
-document [Features](doc/features.md "Features").
+document [Features](doc/features.md "Features"). Nevertheless, once in a
+while I will release a stable version.
 
-### Version 1 /  Sept, 2017 ###
+Available branches:
 
-First productive version (planned).
+  - **stable_v?**: stable versions (frozen)
+  - **master**: the current stable branch plus fixes
+  - **next**: the bleeding-edge development version with new features, but
+              possibly unstable
+
+### stable_v1 /  Sept 14, 2017 ###
+
+First productive version. All basic features working.
 
 
 Prerequisites
