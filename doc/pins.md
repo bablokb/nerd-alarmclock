@@ -1,20 +1,25 @@
 GPIO-Pins used
 ==============
 
-|Raspberry Pi  | Desc.  |4Key | Blinkt!  | 4LpHat  | RTC |
-|-------------:|--------|----:|---------:|--------:| ----|
-|           1  | 3.3V   |     |          |      17 | VCC |
-|           2  | 5V     |     |          |       2 |     |
-|           3  | SDA    |     |          |       3 | SDA |
-|           4  | 5V     |     |        2 |         |     |
-|           5  | SCL    |     |          |       5 | SCL |
-|           6  | GND    |     |          |       6 | GND |
-|           7  | GPIO04 | N2  |          |         |     |
-|           9  | GND    | GND |          |         |     |
-|          11  | GPIO17 | N1  |          |         |     |
-|          13  | GPIO27 | N4  |          |         |     |
-|          14  | GND    |     |        6 |         |     |
-|          15  | GPIO22 | N3  |          |         |     |
-|          16  | GPIO23 |     |       16 |         |     |
-|          17  | 3.3V   | VCC |          |         |     |
-|          18  | GPIO24 |     |       18 |         |     |
+Use           |Desc.    | Odd  | Even | Desc.     | Use                 |
+--------------|---------|-----:|:-----|-----------|---------------------|
+RTC           |3.3V     |   1  |  2   | 5V        | 4LpHat, Blinkt      |
+RTC, 4LpHat   |SDA      |   3  |  4   | 5V        |                     |
+RTC, 4LpHat   |SCL      |   5  |  6   | GND       | RTC, 4LpHat, Blinkt |
+Btn2          |GPIO04   |   7  |  8   |           |                     |
+Keyboard      |GND      |   9  | 10   |           |                     |
+Btn1          |GPIO17   |  11  | 12   |           |                     |
+Btn4          |GPIO27   |  13  | 14   | GND       |                     |
+Btn3          |GPIO22   |  15  | 16   | GPIO23    | Blinkt              |
+4LpHat        |3.3V     |  17  | 18   | GPIO24    | Blinkt              |
+              |SPI_MOSI |  19  | 20   | GND       |                     |
+              |SPI_MISO |  21  | 22   | GPIO25    | SNZ                 |
+              |SPI_CLK  |  23  | 24   | SPI_CE0_N |                     |
+              |GND      |  25  | 26   | SPI_CE1_N |                     |
+              |ID_SD    |  27  | 28   | ID_SC     |                     |
+EK1_CLK       |GPIO05   |  29  | 30   | GND       |                     |
+EK1_DT        |GPIO06   |  31  | 32   | GPIO12    | EK1_SW              |
+EK2_CLK       |GPIO13   |  33  | 34   | GND       |                     |
+EK2_DT        |GPIO19   |  35  | 36   | GPIO16    | EK2_SW              |
+IR            |GPIO26   |  37  | 38   | GPIO20    |                     |
+              |GND      |  39  | 40   | GPIO22    |                     |
