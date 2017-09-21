@@ -119,6 +119,7 @@ locale.setlocale(locale.LC_ALL, '')
 
 # read configuration
 parser = ConfigParser.RawConfigParser()
+parser.optionxform = str
 parser.read('/etc/nerd-alarmclock.conf')
 
 # initialize system
