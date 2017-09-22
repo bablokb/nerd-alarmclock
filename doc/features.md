@@ -47,4 +47,4 @@ Planned
   - Add an IR-receiver and process commands from a remote-control
   - Support internet-radio (just for playing music, independent of alarms)
   - show metadata on the display
-  - Add a knob to adust volume
+  - Add two knobs to select the radio-station and to adust volume
