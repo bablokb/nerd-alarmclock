@@ -10,6 +10,12 @@ the respective button has to be pressed long (about a second should do).
 Currently, only two sets of overloaded functions are defined, initiated
 by button `1` and by button `2`.
 
+Starting with version 2, the nerd-alarmclock supports a fifth button for
+special actions, e.g. for snoozing an alarm (see below).
+
+If you don't have a fifth button, you can redefine button-4 to take over
+these functions (but you loose an alarm).
+
 
 Default Functions
 -----------------
@@ -65,3 +71,14 @@ A second long press will toggle back to the default functions.
 | `3`    | shutdown the system      |
 | `4`    | (no function assigned)   |
 
+
+Snooze Button
+-------------
+
+Currently, the snooze-button operates as follows:
+
+  - if no alarm is ringing and if the brightness of the display
+    is currently turned off (e.g. during the night), pressing the button
+    will show the display for two seconds
+  - if an alarm is ringing, pressing the button will snooze the alarm
+    for the configured snooze-time (turn it off and start it later again)
