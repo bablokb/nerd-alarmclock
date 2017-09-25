@@ -37,6 +37,18 @@ Available branches:
   - **next**: the bleeding-edge development version with new features, but
               possibly unstable
 
+### next / work in progress ###
+
+Besides fixing some minor bugs, this version adds the following features:
+
+  - add support for snoozing alarms
+  - added a set of overlay-functions initiated by a long press of button-2:
+    - restart the clock
+    - reboot the system
+    - shutdown the system
+    - refactored code for future IR remote control suoport
+
+
 ### stable_v1 /  Sept 14, 2017 ###
 
 First productive version. All basic features working.
