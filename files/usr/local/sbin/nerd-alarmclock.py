@@ -74,11 +74,17 @@ def start_threads(settings):
   """ Start all threads """
   
   threads = []
+
   timeKeeperThread = nclock.TimeKeeperThread.TimeKeeperThread(settings)
   threads.append(timeKeeperThread)
   
   keyboardThread = nclock.KeyboardThread.KeyboardThread(settings)
   threads.append(keyboardThread)
+
+  ek1Thread = nclock.EncoderKnobThread.EncoderKnobThread(1,settings)
+  ek2Thread = nclock.EncoderKnobThread.EncoderKnobThread(2,settings)
+  threads.append(ek1Thread)
+  threads.append(ek2Thread)
 
   if settings.get_value('BOT','active','0') != '0':
     botThread = nclock.BotThread.BotThread(settings)
