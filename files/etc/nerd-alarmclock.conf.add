@@ -26,3 +26,15 @@ EK2_CLK: 13
 EK2_DT:  19
 EK2_SW:  16
 
+# --- settings related to sound   ------------------------------------------
+
+[SOUND]
+#sounds: path-to-sounds-directory
+#mixer: PCM
+#mpg123_opts:
+
+# --- settings related to radio   ------------------------------------------
+
+[RADIO]
+#channels: path-to-channels-directory
+
