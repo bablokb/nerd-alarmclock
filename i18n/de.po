@@ -201,6 +201,13 @@ msgstr "Ausgewählter LED-Alarm: %S"
 msgid "Select LED-alarm"
 msgstr "Auswahl LED-Alarmtyp"
 
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:484
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:499
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:522
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:541
+msgid "No alarm"
+msgstr "Kein Alarm"
+
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:473
 msgid "selected sound-alarm: %s"
 msgstr "Ausgewählter Sound-Alarm: %s"
