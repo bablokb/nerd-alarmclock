@@ -195,7 +195,7 @@ msgstr "Auswahl Tage: %s"
 
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:447
 msgid "selected LED-alarm: %s"
-msgstr "Ausgewählter LED-Alarm: %S"
+msgstr "Ausgewählter LED-Alarm: %s"
 
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:456
 msgid "Select LED-alarm"
