@@ -81,11 +81,12 @@ From hardware-side, you need
   - the [LED-strip *Blinkt!* from Pimoroni](https://shop.pimoroni.com/products/blinkt "Blinkt!")
   - the [segment-display *Four Letter pHat*](https://shop.pimoroni.com/products/four-letter-phat "Four-Letter-pHat")
     from the same manufacturer
-  - four buttons, e.g. a cheap [4-key keypad](doc/keypad.jpg) available
+  - four to five buttons, e.g. a cheap [4-key keypad](doc/keypad.jpg) available
     from ebay or Amazon marketplace.
   - a real-time-clock (DS3231, optional)
   - jumper cable or an extension board
     (e.g. a [Mini Black HAT Hack3r](https://shop.pimoroni.com/products/mini-black-hat-hack3r "Extension board"))
+  - two encoder-knobs (KY040) for controlling the internet-radio (optional)
 
 Since you need the GPIOs for both hardware extensions, you cannot just
 plug in the LED-strip or the hat on the Pi. You can either
