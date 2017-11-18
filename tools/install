@@ -114,15 +114,6 @@ configure_system() {
   chown -R nerdc:nerdc /var/lib/nerd-alarmclock
 }
 
-# --- update configuration   ------------------------------------------------
-
-update_config() {
-  if ! grep -q "\[GPIO\]" "/etc/$PROJECT.conf"; then
-    echo -e "[INFO] updating /etc/$PROJECT.conf" 2>&1
-    cat $(dirname "$0")/../files/etc/$PROJECT.conf.add* >> "/etc/$PROJECT.conf"
-  fi
-}
-
 # --- activate service   ----------------------------------------------------
 
 enable_services() {
@@ -135,7 +126,6 @@ enable_services() {
 install_packages
 install_files
 configure_system
-update_config
 enable_services
 
 echo "Please edit /etc/$PROJECT.conf"
