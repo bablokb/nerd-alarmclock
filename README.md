@@ -41,6 +41,9 @@ Available branches:
 
 Besides fixing some minor bugs, this version adds the following features:
 
+  - add support for internet-radio
+    - two encoder-knobs (KY040) for on/off and volume and for switching
+      between channels and channel-lists
   - add support for snoozing alarms
   - added a set of overlay-functions initiated by a long press of button-2:
     - restart the clock
