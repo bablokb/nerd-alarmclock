@@ -44,6 +44,10 @@ install_files() {
     # save current configuration
     mv "/etc/$PROJECT.conf" "/etc/$PROJECT.conf.$rand"
   fi
+  if [ -f "/etc/gpio-poll.conf" ]; then
+    # save current configuration
+    mv "/etc/gpio-poll.conf" "/etc/gpio-poll.conf.$rand"
+  fi
 
   for f in `find $(dirname "$0")/../files/ -type f -not -name "*.pyc"`; do
     target="${f#*files}"
@@ -55,13 +59,19 @@ install_files() {
 
   chmod 755 "/usr/local/sbin/$PROJECT.py"
   chmod 644 "/etc/$PROJECT.conf"
+  chmod 644 "/etc/gpio-poll.conf"
   chmod 644 "/etc/systemd/system/$PROJECT.service"
 
   # restore old configuration
   if [ -f "/etc/$PROJECT.conf.$rand" ]; then
-    mv -f "/etc/$PROJECT.conf" "/etc/$PROJECT.conf.new"
+    mv -f "/etc/$PROJECT.conf" "/etc/$PROJECT.conf.$PROJECT"
     mv "/etc/$PROJECT.conf.$rand" "/etc/$PROJECT.conf"
-    echo -e "[INFO] new version of configuration file saved to: /etc/$PROJECT.conf.new" 2>&1
+    echo -e "[INFO] new version of configuration file saved to: /etc/$PROJECT.conf.$PROJECT" 2>&1
+  fi
+  if [ -f "/etc/gpio-poll.conf.$rand" ]; then
+    mv -f "/etc/gpio-poll.conf" "/etc/gpio-poll.conf.$PROJECT"
+    mv "/etc/gpio-poll.conf.$rand" "/etc/gpio-poll.conf"
+    echo -e "[INFO] new version of configuration file saved to: /etc/gpio-poll.conf.$PROJECT" 2>&1
   fi
 }
 
