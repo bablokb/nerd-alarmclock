@@ -51,6 +51,8 @@ Besides fixing some minor bugs, this version adds the following features:
     - shutdown the system
     - refactored code for future IR remote control suoport
 
+Note that you should read the section *Upgrade* below if you are upgrading
+from stable_v1.
 
 ### stable_v1 /  Sept 14, 2017 ###
 
