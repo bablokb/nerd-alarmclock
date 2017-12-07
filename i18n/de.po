@@ -200,10 +200,16 @@ msgstr "Auswahl des Attributs"
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:370
 msgid "enable"
 msgstr "aktvieren"
+msgid "enabled"
+msgstr "an"
 
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:372
-msgid "disabled"
+msgid "disable"
 msgstr "deaktivieren"
+msgid "disabled"
+msgstr "aus"
+msgid "snooze"
+msgstr "schlummern"
 
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:376
 msgid "Change state of alarm"
