@@ -39,6 +39,8 @@ Available branches:
 
 ### next / work in progress ###
 
+### stable_v2 / Dec xx, 2017 ###
+
 Besides fixing some minor bugs, this version adds the following features:
 
   - add support for internet-radio
@@ -124,6 +126,21 @@ the service (file `/etc/gpio-poll.conf`), but this project already
 provides a suitable configuration file.
 
 
+Upgrade
+-------
+
+Before uprading an existing system, you should stop the relevant system
+services:
+
+    sudo systemctl stop nerd-alarmclock.service
+    sudo systemctl stop gpio-poll.service
+
+Then run a normal install like documented above. After installation, you
+should update you existing `/etc/nerd-alarmclock.conf` from the file
+`/etc/nerd-alarmclock.conf.nerd-alarmclock` and the file `/etc/gpio-poll.conf`
+from the file `/etc/gpio-poll.conf.nerd-alarmclock`.
+
+
 Configuration
 -------------
 
@@ -137,21 +154,24 @@ provided by *BotFather*. To query your own id, edit the python-script
 The script will print all messages and you will find your own id in the
 messages (extract the "from-id").
 
+You should also make sure that the GPIOs configured in `/etc/gpio-poll.conf`
+match the GPIOs in the section `[GPIO]` of `/etc/nerd-alarmclock.conf`.
+
 
 ### Bot configuration ###
 
 The bot of the alarmclock uses a predefined set of commands. You should
 register the following commands for your bot with *BotFather*:
 
-| Command | Description |
-| --- | --- |
-| `/alarm` | Configure alarms |
-| `/restart` | Restart the clock |
-| `/reboot` | Reboot the system |
-| `/shutdown` | Shutdown the system |
-| `/start` | Start a dialog with the bot |
-| `/help` | Provide help |
-| `/settings` | Show settings |
+| Command    | Description                 |
+| -----------|-----------------------------|
+| `/alarm`   | Configure alarms            |
+| `/restart` | Restart the clock           |
+| `/reboot`  | Reboot the system           |
+| `/shutdown`| Shutdown the system         |
+| `/start`   | Start a dialog with the bot |
+| `/help`    | Provide help                |
+| `/settings`| Show settings               |
 
 This is not strictly necessary, but it greatly simplifies interaction with
 the bot.
@@ -160,12 +180,23 @@ the bot.
 ### Adding sounds ###
 
 To play music or sounds during an alarm, you have to add the files
-to the directory `/var/lib/nerd-clock/sounds`. The nerd-alarmclock uses
+to the directory `/var/lib/nerd-alarmclock/sounds`. The nerd-alarmclock uses
 the program `mpg123` to play the files, so all formats supported by mpg123
 should be fine. If you want to play an internet-radio station, add the url
 to a file with the extension `m3u` (playlist). Note that mpg123 does not
 support nested playlists.
 
+### Adding Radio channel-list ###
+
+Since version v2, the nerd-alarmclock supports playing internet-radio.
+The distribution supplies some sample channel-lists in the directory
+`/var/lib/nerd-alarmclock/channels`. Add your own lists using the
+format in the samples.
+
+Pressing one of the encoder-knobs will cycle through the channel lists,
+while turning the knob will cycle through the channels of a given list.
+The display will show the name of the channel list after a change for a
+few seconds. The same holds true for changing channels.
 
 ### Manual configuration ###
 
@@ -192,6 +223,10 @@ After initial configuration as explained above, restart the system and then
 it should just run. Use the bot to configure alarms and the buttons to
 enable or disable the alarms. See [keyboard usage](doc/keyboard.md
 "Keyboard Usage") for details about the behaviour of the buttons.
+
+The two encoder-knobs have builtin switches. One encoder-knob controls
+the radio (switch: on/off, dial: volume), the other knob controls the
+channels (switch: cycle channel-lists, dial: choose channel).
 
 
 Hacking
