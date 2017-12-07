@@ -6,6 +6,7 @@ Implemented
 
   - Display the current time on the display
   - Show the day of the month on the LED-strip (using colors and number of LEDs)
+  - Play internet radio (**new**)
   - Update time automatically from RTC and/or internet time-servers
   - Brightness of the display and the LED strip is configurable
     (off and four levels)
@@ -29,6 +30,9 @@ Implemented
     * turn alarm on or off or stop a running alarm
     * cycle through display brightness
     * cycle through LED brightness
+  - Control internet radio using two encoder-knobs (**new**)
+    * on/off and set volume
+    * cycle through channel-lists and cycle through stations (within list)
   - snooze a running alarm (i.e. stop it and restart it after a given delay).
     Can be implemented with a fifth  button or by redefining an existing button.
     (**new**)
@@ -36,15 +40,12 @@ Implemented
     * configure alarms
     * restart the clock
     * reboot or shutdown the system
+  - Restart/Reboot/Shutdown available from push-button (**new**)
 
 
 Planned
 -------
 
-  - Put features currently only available from the bot additionally on
-    push-buttons (e.g. restart/reboot/shutdown)
-  - Add a web-interface to be independent from telegram
   - Add an IR-receiver and process commands from a remote-control
-  - Support internet-radio (just for playing music, independent of alarms)
+  - Add a web-interface to be independent from telegram
   - show metadata on the display
-  - Add two knobs to select the radio-station and to adust volume
