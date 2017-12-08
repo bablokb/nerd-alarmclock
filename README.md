@@ -37,6 +37,13 @@ Available branches:
   - **next**: the bleeding-edge development version with new features, but
               possibly unstable
 
+### next / work in progress ###
+
+Planned features:
+
+  - control the clock using an IR remote
+  - use the LED-strip as a lamp
+
 ### stable_v2 / Dec 08, 2017 ###
 
 Besides fixing some minor bugs, this version adds the following features:
