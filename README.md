@@ -37,13 +37,12 @@ Available branches:
   - **next**: the bleeding-edge development version with new features, but
               possibly unstable
 
-### next / work in progress ###
-
-### stable_v2 / Dec xx, 2017 ###
+### stable_v2 / Dec 08, 2017 ###
 
 Besides fixing some minor bugs, this version adds the following features:
 
   - add support for internet-radio
+    - play radio independently of alarms
     - two encoder-knobs (KY040) for on/off and volume and for switching
       between channels and channel-lists
   - add support for snoozing alarms
@@ -51,7 +50,9 @@ Besides fixing some minor bugs, this version adds the following features:
     - restart the clock
     - reboot the system
     - shutdown the system
-    - refactored code for future IR remote control suoport
+  - refactored code for future IR remote control suoport
+
+For details, see [Features](doc/features.md "Features").
 
 Note that you should read the section *Upgrade* below if you are upgrading
 from stable_v1.
