@@ -40,7 +40,7 @@ class Msg(object):
       syslog.openlog("nerd-alarmclock")
 
   def msg(self,text):
-    """ write message to the system log """ 
+    """ write message to the system log """
     if self._debug == '1':
       with self._lock:
         if self._syslog:
@@ -72,12 +72,15 @@ def init(parser):
 
 def start_threads(settings):
   """ Start all threads """
-  
+
   threads = []
 
   timeKeeperThread = nclock.TimeKeeperThread.TimeKeeperThread(settings)
   threads.append(timeKeeperThread)
-  
+
+  webThread = nclock.WebThread.WebThread(settings)
+  threads.append(webThread)
+
   keyboardThread = nclock.KeyboardThread.KeyboardThread(settings)
   threads.append(keyboardThread)
 

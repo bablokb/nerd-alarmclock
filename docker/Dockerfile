@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     python-blinkt \
     python-simplejson \
     python-fourletterphat \
+    python-flask \
     mpg123
 
 ARG user=nerdc
@@ -43,5 +44,5 @@ RUN INCUBATOR_VER=${INCUBATOR_VER} git clone https://github.com/benjaminfuchs/ne
     && chmod +x /usr/local/sbin/start-nerdc.sh
 
 WORKDIR "$HOME"
-USER ${user}
+#USER ${user}
 CMD ["/bin/bash", "start-nerdc.sh"]
