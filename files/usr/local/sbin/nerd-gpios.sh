@@ -12,8 +12,8 @@
 # --------------------------------------------------------------------------
 
 gpio -g mode  4 tri    # BTN2
-gpio -g mode 12 down   # EK1_SW
-gpio -g mode 16 down   # EK2_SW
+gpio -g mode 12 up     # EK1_SW
+gpio -g mode 16 up     # EK2_SW
 gpio -g mode 17 tri    # BTN1
 gpio -g mode 22 tri    # BTN3
 gpio -g mode 25 down   # SNZ
