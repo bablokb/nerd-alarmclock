@@ -14,8 +14,7 @@ RUN apt-get update && apt-get install -y \
     python-simplejson \
     python-fourletterphat \
     python-flask \
-    mpg123 \
-    lighttpd
+    mpg123
 
 ARG user=nerdc
 ARG group=nerdc
@@ -40,16 +39,13 @@ RUN INCUBATOR_VER=${INCUBATOR_VER} git clone https://github.com/benjaminfuchs/ne
     && cd gpio-poll-service \
     && tools/install
 
-ADD etc/nerd-alarmclock.conf /etc/nerd-alarmclock.conf
-ADD etc/lighttpd/ /etc/lighttpd/
 ADD var/www/ /var/www/
+ADD etc/nerd-alarmclock.conf /etc/nerd-alarmclock.conf
 ADD usr/local/sbin/ /usr/local/sbin/
 
-RUN chown -R nerdc:nerdc /var/www/ \
-    && chown nerdc:nerdc /usr/sbin/lighttpd \
-    && chown -R ${user} "$HOME" \
-    && chmod -R +x /usr/local/sbin/ \
-    && setcap CAP_NET_BIND_SERVICE=+eip /usr/sbin/lighttpd
+RUN chown -R ${user} "$HOME" \
+    && chown -R nerdc:nerdc /var/www/ \
+    && chmod -R +x /usr/local/sbin/
 
 WORKDIR "$HOME"
 USER ${user}
