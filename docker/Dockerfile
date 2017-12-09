@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
     python-simplejson \
     python-fourletterphat \
     python-flask \
-    mpg123
+    mpg123 \
+    lighttpd
 
 ARG user=nerdc
 ARG group=nerdc
@@ -27,8 +28,6 @@ RUN groupadd -g ${gid} ${group} \
     && useradd -d "$HOME" -u ${uid} -g ${gid} -G audio,i2c,nerdc,video -m -s /bin/bash ${user}
 
 VOLUME "$HOME"
-ADD docker-nerdc.conf /etc/nerd-alarmclock.conf
-ADD start-nerdc.sh /usr/local/sbin/start-nerdc.sh
 
 WORKDIR /var/lib
 # This argument is a trick to force rebuild by changes in the repo
@@ -39,10 +38,19 @@ RUN INCUBATOR_VER=${INCUBATOR_VER} git clone https://github.com/benjaminfuchs/ne
     && cd - \
     && git clone https://github.com/bablokb/gpio-poll-service.git \
     && cd gpio-poll-service \
-    && tools/install \
+    && tools/install
+
+ADD etc/nerd-alarmclock.conf /etc/nerd-alarmclock.conf
+ADD etc/lighttpd/ /etc/lighttpd/
+ADD var/www/ /var/www/
+ADD usr/local/sbin/ /usr/local/sbin/
+
+RUN chown -R nerdc:nerdc /var/www/ \
+    && chown nerdc:nerdc /usr/sbin/lighttpd \
     && chown -R ${user} "$HOME" \
-    && chmod +x /usr/local/sbin/start-nerdc.sh
+    && chmod -R +x /usr/local/sbin/ \
+    && setcap CAP_NET_BIND_SERVICE=+eip /usr/sbin/lighttpd
 
 WORKDIR "$HOME"
-#USER ${user}
+USER ${user}
 CMD ["/bin/bash", "start-nerdc.sh"]
