@@ -39,7 +39,6 @@ RUN INCUBATOR_VER=${INCUBATOR_VER} git clone https://github.com/benjaminfuchs/ne
     && cd gpio-poll-service \
     && tools/install
 
-ADD var/www/ /var/www/
 ADD etc/nerd-alarmclock.conf /etc/nerd-alarmclock.conf
 ADD usr/local/sbin/ /usr/local/sbin/
 
