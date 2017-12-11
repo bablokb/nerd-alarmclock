@@ -43,6 +43,7 @@ Planned features:
 
   - control the clock using an IR remote
   - use the LED-strip as a lamp
+  - Add a web-interface to be independent from telegram
 
 ### stable_v2 / Dec 08, 2017 ###
 
