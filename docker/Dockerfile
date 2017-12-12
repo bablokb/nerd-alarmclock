@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     python-blinkt \
     python-simplejson \
     python-fourletterphat \
-    python-flask \
+    python-bottle \
     mpg123
 
 ARG user=nerdc
@@ -43,7 +43,6 @@ ADD etc/nerd-alarmclock.conf /etc/nerd-alarmclock.conf
 ADD usr/local/sbin/ /usr/local/sbin/
 
 RUN chown -R ${user} "$HOME" \
-    && chown -R nerdc:nerdc /var/www/ \
     && chmod -R +x /usr/local/sbin/
 
 WORKDIR "$HOME"
