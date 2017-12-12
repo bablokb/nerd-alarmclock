@@ -9,7 +9,7 @@
 #
 # --------------------------------------------------------------------------
 
-PACKAGES="wiringpi python-pip python-blinkt python-simplejson python-fourletterphat mpg123"
+PACKAGES="wiringpi python-pip python-blinkt python-simplejson python-fourletterphat python-bottle mpg123"
 PROJECT="nerd-alarmclock"
 
 # --- basic packages   ------------------------------------------------------
@@ -108,7 +108,7 @@ configure_system() {
     echo -e "[INFO] create system-user nerdc:nerdc" 2>&1
     groupadd -r nerdc
     adduser --disabled-login --gecos "" --system --group \
-                                        --home /var/lib/nerd-alarmclock nerdc 
+                                        --home /var/lib/nerd-alarmclock nerdc
     usermod -a -G gpio,i2c,audio nerdc
   fi
   chown -R nerdc:nerdc /var/lib/nerd-alarmclock
