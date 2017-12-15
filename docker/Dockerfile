@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     python-blinkt \
     python-simplejson \
     python-fourletterphat \
+    python-bottle \
     mpg123
 
 ARG user=nerdc
@@ -26,8 +27,6 @@ RUN groupadd -g ${gid} ${group} \
     && useradd -d "$HOME" -u ${uid} -g ${gid} -G audio,i2c,nerdc,video -m -s /bin/bash ${user}
 
 VOLUME "$HOME"
-ADD docker-nerdc.conf /etc/nerd-alarmclock.conf
-ADD start-nerdc.sh /usr/local/sbin/start-nerdc.sh
 
 WORKDIR /var/lib
 # This argument is a trick to force rebuild by changes in the repo
@@ -38,9 +37,13 @@ RUN INCUBATOR_VER=${INCUBATOR_VER} git clone https://github.com/benjaminfuchs/ne
     && cd - \
     && git clone https://github.com/bablokb/gpio-poll-service.git \
     && cd gpio-poll-service \
-    && tools/install \
-    && chown -R ${user} "$HOME" \
-    && chmod +x /usr/local/sbin/start-nerdc.sh
+    && tools/install
+
+ADD etc/nerd-alarmclock.conf /etc/nerd-alarmclock.conf
+ADD usr/local/sbin/ /usr/local/sbin/
+
+RUN chown -R ${user} "$HOME" \
+    && chmod -R +x /usr/local/sbin/
 
 WORKDIR "$HOME"
 USER ${user}
