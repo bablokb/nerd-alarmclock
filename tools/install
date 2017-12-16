@@ -12,6 +12,8 @@
 PACKAGES="wiringpi python-pip python-blinkt python-simplejson python-fourletterphat python-bottle mpg123"
 PROJECT="nerd-alarmclock"
 
+LIRC_PIN="26"
+
 # --- basic packages   ------------------------------------------------------
 
 check_packages() {
@@ -87,6 +89,11 @@ configure_system() {
   if ! grep -q "^dtoverlay=i2c-rtc,ds3231" /boot/config.txt ; then
     echo -e "[INFO] configuring RTC in /boot/config.txt" 2>&1
     echo "dtoverlay=i2c-rtc,ds3231" >> /boot/config.txt
+  fi
+
+  if ! grep -q "^dtoverlay=lirc-rpi" /boot/config.txt ; then
+    echo -e "[INFO] configuring LIRC in /boot/config.txt" 2>&1
+    echo "dtoverlay=lirc-rpi,gpio_in_pin=$LIRC_PIN" >> /boot/config.txt
   fi
 
   # update /etc/modules
