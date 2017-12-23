@@ -78,8 +78,9 @@ def start_threads(settings):
   timeKeeperThread = nclock.TimeKeeperThread.TimeKeeperThread(settings)
   threads.append(timeKeeperThread)
 
-  webThread = nclock.WebThread.WebThread(settings)
-  threads.append(webThread)
+  if settings.get_value('WEB','active','1') != '0':
+    webThread = nclock.WebThread.WebThread(settings)
+    threads.append(webThread)
 
   keyboardThread = nclock.KeyboardThread.KeyboardThread(settings)
   threads.append(keyboardThread)
