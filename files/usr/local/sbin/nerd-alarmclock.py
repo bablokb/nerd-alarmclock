@@ -94,6 +94,10 @@ def start_threads(settings):
     botThread = nclock.BotThread.BotThread(settings)
     threads.append(botThread)
 
+  if settings.get_value('LIRC','active','0') != '0':
+    lircThread = nclock.LircThread.LircThread(settings)
+    threads.append(lircThread)
+
   map(threading.Thread.start, threads)
   return threads
 
