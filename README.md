@@ -39,11 +39,16 @@ Available branches:
 
 ### next / work in progress ###
 
-Planned features:
+Besides fixing some minor bugs, this version adds the following features:
 
-  - control the clock using an IR remote
-  - use the LED-strip as a lamp
-  - Add a web-interface to be independent from telegram
+  - control the clock using an IR remote (complete)
+  - use the LED-strip as a lamp (work-in-progress)
+  - add parameter `delay` to all alarms (e.g. to start the sound later than
+    the light) (work-in-progress)
+  - Add a web-interface to be independent from telegram (work-in-progress)
+
+Note that you should read the section *Upgrade* below if you are upgrading
+from a previous version.
 
 ### stable_v2 / Dec 08, 2017 ###
 
@@ -113,8 +118,10 @@ documented [here](doc/pins.md "Pins").
 Installation
 ------------
 
-As a prerequisite, you need a basic install of Raspbian Jessie-Lite. It
-probably also works with Stretch-Lite, but this is untested yet.
+As a prerequisite, you need a basic install of Raspbian Jessie-Lite or
+Stretch-Lite, but note that the latter has problems with the initial
+configuration of IR-remotes (an IR configured under Jessie will work fine
+with Stretch though).
 
 Use the following commands to install the software:
 
@@ -184,6 +191,24 @@ register the following commands for your bot with *BotFather*:
 
 This is not strictly necessary, but it greatly simplifies interaction with
 the bot.
+
+
+### IR remote ###
+
+to be written.
+
+### Audio ###
+
+The install script will add a file `/etc/asound.conf` which is suitable for
+USB-audio. If you use the pHat-DAC, you should move the file
+`/etc/asound.conf.pHatDAC` to `/etc/asound.conf`. Note that the pHat-DAC
+uses GPIO19, so you have to reconfigure the default setup of the pins
+(edit the files `/etc/nerd-alarmclock.conf`, `/usr/local/sbin/nerd-gpios.sh`
+and `/etc/gpio-poll.conf` and reassign the pin for the encoder-knob).
+
+If you want to use Bluetooth-audio, you should head over to the project
+[pi-btaudio](https://github.com/bablokb/pi-btaudio "pi-btaudio") and follow
+the instructions.
 
 
 ### Adding sounds ###
