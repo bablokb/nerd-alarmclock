@@ -23,3 +23,8 @@ GPIO-Pins used
 |EK2_DT        |GPIO19   |  35  | 36   | GPIO16    | EK2_SW              |
 |IR            |GPIO26   |  37  | 38   | GPIO20    |                     |
 |              |GND      |  39  | 40   | GPIO22    |                     |
+
+Note that EK2_DT conflicts with the pHat-DAC. If you want to use both
+the encoder-knob and the pHat-DAC, you have to connect the data-pin
+of EK2 to a different pin and changes various files (see the README.md
+for details).
