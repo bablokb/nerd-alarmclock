@@ -195,7 +195,19 @@ the bot.
 
 ### IR remote ###
 
-to be written.
+The alarm clock can also be controlled using an IR remote control. First, you
+have to install IR support (lirc) and configure your remote. There are
+various tutorials on the net, please make sure you follow a version for
+the base operating system (configuration of lirc has changed in Stretch
+compared to Jessie). After configuration, you should have a lirc-configuration
+file which maps IR-pulses to (lirc-) keynames.
+
+Once you have the lirc keynames, you must map the keys using these keynames
+to logical functions of the nerd-alarmclock. This is done in the section
+`[LIRC]` of `/etc/nerd-alarmclock.conf`. The installation provides a sample
+configuration, depending on your remote, you will want to change the
+mapping or add additional functions.
+
 
 ### Audio ###
 
