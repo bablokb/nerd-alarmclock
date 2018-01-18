@@ -208,6 +208,13 @@ to logical functions of the nerd-alarmclock. This is done in the section
 configuration, depending on your remote, you will want to change the
 mapping or add additional functions.
 
+A special function is called `LONG` (in the sample mapping assigned to `KEY_0`).
+Pressing this key will simulate a long-press for the following key. E.g.
+if you press `KEY_0` and then `KEY_1`, this will emulate a long press
+of `BTN1` (which in turns activates the first set of overloaded functions for
+all keys). Since most remotes have enough keys, this feature is not
+really necessary when using a remote control.
+
 
 ### Audio ###
 
