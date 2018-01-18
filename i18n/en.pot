@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-12-06 07:51+CET\n"
+"POT-Creation-Date: 2018-01-18 16:09+CET\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:93
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:97
 msgid ""
 "Hi Bernhard,\n"
 "this is your NerdClockController.\n"
@@ -23,7 +23,7 @@ msgid ""
 "What can I do for you?"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:105
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:109
 msgid ""
 "Hi Bernhard,\n"
 "use /settings to see the current settings,\n"
@@ -33,15 +33,15 @@ msgid ""
 "use /alarm to set alarm-attributes."
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:123
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:127
 msgid "Global"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:127
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:131
 msgid "Select settings"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:138
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:142
 msgid ""
 "day start:                  %s\n"
 "day end:                    %s\n"
@@ -53,214 +53,237 @@ msgid ""
 "display-brightness (night): %s\n"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:162
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:337
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:536
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:555
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:166
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:345
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:547
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:566
 msgid "radio (current channel)"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:167
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:171
 msgid ""
 "Alarm:     %s,\n"
 " state:    %s\n"
 " time:     %s\n"
 " snooze:   %s\n"
 " days:     %s\n"
-" LED:      %s\n"
+" LED:      %s (duration: %s, delay: %s)\n"
 " display:  %s\n"
-" sound:    %s\n"
-" duration: %s\n"
+" sound:    %s (duration: %s, delay: %s)\n"
 " volume:   %s\n"
 " fadein:   %s\n"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:199
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:201
 msgid "Really restart?"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:210
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:244
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:278
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:212
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:246
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:280
 msgid "invalid use!"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:218
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:220
 msgid "canceled restart"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:221
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:223
 msgid "restarting the clock"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:233
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:235
 msgid "Really reboot?"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:252
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:254
 msgid "canceled reboot"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:255
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:257
 msgid "rebooting the system"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:267
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:269
 msgid "Really shutdown?"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:286
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:288
 msgid "canceled shutdown"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:289
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:291
 msgid "shutting down the system"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:303
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:305
 msgid "Select alarm"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:320
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:322
 msgid "state: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:323
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:325
 msgid "time: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:326
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:328
 msgid "snooze: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:329
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:331
 msgid "days: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:332
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:334
 msgid "LED: %s"
 msgstr ""
 
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:337
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:340
-msgid "Sound: %s"
-msgstr ""
-
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:343
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:351
 msgid "duration: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:346
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:340
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:354
+msgid "delay: %s"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:345
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:348
+msgid "Sound: %s"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:357
 msgid "volume: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:349
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:360
 msgid "fadein: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:354
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:365
 msgid "Select attribute"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:370
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:381
 msgid "enable"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:372
-msgid "disabled"
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:383
+msgid "disable"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:376
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:387
 msgid "Change state of alarm"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:393
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:404
 msgid "Set alarm time"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:404
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:415
 msgid "illegal time value: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:411
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:422
 msgid "new time: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:434
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:445
 msgid "Set alarm snooze-delay"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:442
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:453
 msgid "new snooze-delay: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:464
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:475
 msgid "Set alarm days"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:474
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:485
 msgid "selected days: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:493
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:497
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:504
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:508
 msgid "selected LED-alarm: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:494
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:509
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:532
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:565
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:505
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:520
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:543
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:576
 msgid "No alarm"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:514
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:525
 msgid "Select LED-alarm"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:531
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:535
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:539
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:542
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:546
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:550
 msgid "selected sound-alarm: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:576
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:587
 msgid "Select sound-alarm"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:593
-msgid "Set alarm duration"
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:604
+msgid "Set LED alarm duration"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:606
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:615
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:678
 msgid "new duration: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:628
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:637
+msgid "Set LED alarm delay"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:648
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:708
+msgid "new delay: %s"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:670
+msgid "Set sound alarm duration"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:700
+msgid "Set sound alarm delay"
+msgstr ""
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:730
 msgid "Set alarm volume"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:635
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:737
 msgid "new volume: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:657
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:759
 msgid "Set alarm fadein"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:664
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:766
 msgid "new fadein: %s"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:677
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:779
 msgid "sorry, but I don't understand '%s'"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:742
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:844
 msgid "No"
 msgstr ""
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:744
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:846
 msgid "Yes"
 msgstr ""
 

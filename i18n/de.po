@@ -91,9 +91,9 @@ msgid ""
 " time:     %s\n"
 " snooze:   %s\n"
 " days:     %s\n"
-" LED:      %s\n"
+" LED:      %s (duration: %s, delay: %s)\n"
 " display:  %s\n"
-" sound:    %s\n"
+" sound:    %s (duration: %s, delay: %s)\n"
 " duration: %s\n"
 " volume:   %s\n"
 " fadein:   %s\n"
@@ -185,6 +185,10 @@ msgstr "Sound: %s"
 msgid "duration: %s"
 msgstr "Dauer: %s"
 
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:354
+msgid "delay: %s"
+msgstr "Verzögerung"
+
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:346
 msgid "volume: %s"
 msgstr "Lautstärke: %s"
@@ -269,10 +273,6 @@ msgstr "Ausgewählter Sound-Alarm: %s"
 msgid "Select sound-alarm"
 msgstr "Auswahl Sound-Alarm"
 
-#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:593
-msgid "Set alarm duration"
-msgstr "Dauer des Alarms setzen"
-
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:606
 msgid "new duration: %s"
 msgstr "Neue Dauer: %s"
@@ -280,6 +280,27 @@ msgstr "Neue Dauer: %s"
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:628
 msgid "Set alarm volume"
 msgstr "Lautstärke festlegen"
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:604
+msgid "Set LED alarm duration"
+msgstr "Dauer des LED Alarms festlegen"
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:637
+msgid "Set LED alarm delay"
+msgstr "Verzögerung des LED Alarms festlegen"
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:648
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:708
+msgid "new delay: %s"
+msgstr "Neue Verzögerung: %s"
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:670
+msgid "Set sound alarm duration"
+msgstr "Dauer des Sound-Alarms festlegen"
+
+#: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:700
+msgid "Set sound alarm delay"
+msgstr "Verzögerung des Sound Alarms festlegen"
 
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:635
 msgid "new volume: %s"
