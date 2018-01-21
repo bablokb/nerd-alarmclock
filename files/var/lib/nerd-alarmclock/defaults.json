@@ -9,6 +9,9 @@
  "led.brightness.day"  : 1,
  "led.brightness.night": 1,
 
+ "led.lamp.rgb"        : [255,255,255],
+ "led.lamp.brightness" : 2,
+
  "display.mode"            : "time",
  "display.brightness.day"  : 3,
  "display.brightness.night": 1,
