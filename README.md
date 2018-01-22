@@ -42,9 +42,9 @@ Available branches:
 Besides fixing some minor bugs, this version adds the following features:
 
   - control the clock using an IR remote (complete)
-  - use the LED-strip as a lamp (work-in-progress)
+  - use the LED-strip as a lamp (testing)
   - add parameter `delay` to all alarms (e.g. to start the sound later than
-    the light) (work-in-progress)
+    the light) (complete)
   - Add a web-interface to be independent from telegram (work-in-progress)
 
 Note that you should read the section *Upgrade* below if you are upgrading
