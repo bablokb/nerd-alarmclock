@@ -266,6 +266,8 @@ bot, so you have to change the manually:
 
   - **day.start**: start of day-mode (e.g. brightness depends on this)
   - **day.end**:   end   of day-mode (e.g. brightness depends on this)
+  - **lamp.rgb**:  RGB-values of LEDs in lamp-mode
+  - **lamp.brightness**:  brightness of LEDs in lamp-mode
   - some special options to tweak the alarms
 
 
