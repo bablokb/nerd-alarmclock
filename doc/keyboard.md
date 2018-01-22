@@ -82,3 +82,5 @@ Currently, the snooze-button operates as follows:
     will show the display for two seconds
   - if an alarm is ringing, pressing the button will snooze the alarm
     for the configured snooze-time (turn it off and start it later again)
+  - a long press of the button will turn on (or off) all LED thus using
+    the LED-strip as a lamp
