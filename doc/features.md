@@ -6,6 +6,7 @@ Implemented
 
   - Display the current time on the display
   - Show the day of the month on the LED-strip (using colors and number of LEDs)
+  - Use the LED-strip as a lamp (**new**)
   - Play internet radio (**since v2**)
   - Update time automatically from RTC and/or internet time-servers
   - Brightness of the display and the LED strip is configurable
@@ -20,7 +21,9 @@ Implemented
     * time
     * day(s) of the week
     * duration
-    * snooze-delay (**since v2**)
+    * delay for light or sound (e.g. sound will start 2 minutes after light
+      or vica-versa) (**new**)
+    * snooze-time (**since v2**)
     * type of light-alarm to show
     * type of display-alarm to show (e.g. some running text)
     * song/playlist to play (playlists also support internet-radio)
