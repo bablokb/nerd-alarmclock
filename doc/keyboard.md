@@ -47,14 +47,13 @@ Overloaded Functions (Set 1)
 A long press of button `1` activates this set of overloaded functions.
 A second long press will toggle back to the default functions.
 
-The functions for buttons 3 and 4 are not implemented yet.
 
-| Button | function                 |
-|--------|--------------------------|
-| `1`    | cycle LED brightness     |
-| `2`    | cycle display brightness |
-| `3`    | cycle LED modes          |
-| `4`    | cycle display modes      |
+| Button | function                                  |
+|--------|-------------------------------------------|
+| `1`    | cycle LED brightness                      |
+| `2`    | cycle display brightness                  |
+| `3`    | cycle LED modes                           |
+| `4`    | cycle display modes (not implemented yet) |
 
 
 Overloaded Functions (Set 2)
