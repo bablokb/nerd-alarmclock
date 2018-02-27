@@ -63,7 +63,8 @@ def init(parser):
   settings.load()
 
   settings.leds    = nclock.LedController.LedController(settings)
-  settings.display = nclock.DisplayController.DisplayController(settings)
+  if settings.get_value('DISPLAY','active','1') != '0':
+    settings.display = nclock.DisplayController.DisplayController(settings)
   settings.sound   = nclock.SoundController.SoundController(settings)
   settings.alarms  = nclock.AlarmController.AlarmController(settings)
   return settings
