@@ -1,3 +1,17 @@
+<!--
+# ----------------------------------------------------------------------------
+# Webinterface for the nerd-clock.
+#
+# This file defines the content area for the alarm-configuration.
+#
+# Author: Bernhard Bablok, Benjamin Fuchs
+# License: GPL3
+#
+# Website: https://github.com/bablokb/nerd-alarmclock
+#
+# ----------------------------------------------------------------------------
+-->
+
 <div id="content_alarm" class="content">
   <div class="list">
       <input class="time-light" id="alarm_time" type="time" onblur="saveSettings()"/>

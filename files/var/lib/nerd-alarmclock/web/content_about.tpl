@@ -1,3 +1,17 @@
+<!--
+# ----------------------------------------------------------------------------
+# Webinterface for the nerd-clock.
+#
+# This file defines the content area for the about-screen.
+#
+# Author: Bernhard Bablok, Benjamin Fuchs
+# License: GPL3
+#
+# Website: https://github.com/bablokb/nerd-alarmclock
+#
+# ----------------------------------------------------------------------------
+-->
+
 <div id="content_about" class="content">
   <h3>Project:</h3>
   <li class="list-item">
