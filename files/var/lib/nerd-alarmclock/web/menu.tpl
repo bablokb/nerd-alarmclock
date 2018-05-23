@@ -27,13 +27,13 @@
   function openDefaultTab() {
     if (!selected_tab) {
       // select alarm-tab as default
-      $("#id_tab_alarm").click();
+      $("#id_btn_alarm").click();
     }
   };
 
-  window.onload = function () {
-    openDefaultTab()
-  }
+  $(document).ready(function() {
+    openDefaultTab();
+  });
 </script>
 
 <!-- the menu   ------------------------------------------------------   -->
