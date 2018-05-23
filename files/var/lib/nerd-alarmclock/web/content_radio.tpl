@@ -12,6 +12,28 @@
 # ----------------------------------------------------------------------------
 -->
 
+<!-- helper scripts   --------------------------------------------------   -->
+
+<script  type="text/javascript">
+  function read_radio_settings() {
+    $.ajax({
+      url: "/radio/read"
+    }).then(function(data) {
+      for (var key in data) {
+        var name = '#id_' + key.replace(/\./g,'_');
+        $(name).val(data[key]);
+      }
+    });
+  }
+
+  function on_select_tab_radio() {
+    console.error("on_select_tab_radio()");
+    read_radio_settings();
+  }
+</script>
+
+<!-- form for radio settings   -----------------------------------------   -->
+
 <div id="id_content_radio" class="content">
   <form id="id_form_radio" method="post">
     <fieldset>
