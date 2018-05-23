@@ -1,6 +1,6 @@
 <!--
 # ----------------------------------------------------------------------------
-# Webinterface for the nerd-clock.
+# Webinterface for the nerd-alarmclock.
 #
 # This file defines the content area for the alarm-configuration.
 #
@@ -11,6 +11,111 @@
 #
 # ----------------------------------------------------------------------------
 -->
+
+<div id="id_content_alarm" class="content">
+  <form id="id_form_alarm" method="post">
+    <fieldset>
+
+      <!-- alarm-selection ----------------------------------------------- -->
+      <div class="">
+        <label for="id_alarm_nr">Nr</label>
+        <!-- TODO: implement on_alarm_nr_select() -->
+        <select class="" id="id_alarm_nr"
+                onselect="on_alarm_nr_select()"></select>
+      </div>
+
+      <!-- state --------------------------------------------------------- -->
+      <div class="">
+        <label for="id_alarm_state">State</label>
+        <!-- TODO: toggle-button -->
+        <button id="id_alarm_state">On/off</button>
+      </div>
+
+      <!-- time ---------------------------------------------------------- -->
+      <div class="">
+        <label for="id_alarm_time">Time</label>
+        <input class="" id="id_alarm_time" type="time"/>
+      </div>
+
+      <!-- snooze -------------------------------------------------------- -->
+      <div class="">
+        <label for="id_alarm_snooze">Snooze</label>
+        <input class="" id="id_alarm_snooze" type="time"/>
+      </div>
+
+      <!-- days ---------------------------------------------------------- -->
+      <div class="">
+        <label for="id_alarm_days">Days</label>
+        <!-- TODO: fill select for days -->
+        <select class="" id="id_alarm_days"></select>
+      </div>
+
+      <!-- LED (name, duration, delay) ----------------------------------- -->
+      <div class="">
+        <label for="id_alarm_led_name">Name</label>
+        <!-- TODO: fill select for alarm-LED -->
+        <select class="" id="id_alarm_led_name"></select>
+      </div>
+      <div class="">
+        <label for="id_alarm_led_duration">Duration</label>
+        <input class="" id="id_alarm_led_duration" type="time"/>
+      </div>
+      <div class="">
+        <label for="id_alarm_led_delay">Delay</label>
+        <input class="" id="id_alarm_led_delay" type="time"/>
+      </div>
+
+      <!-- display (name, text, duration, delay) ------------------------- -->
+      <div class="">
+        <label for="id_alarm_display_name">Name</label>
+        <!-- TODO: fill select for alarm-DISPLAY -->
+        <select class="" id="id_alarm_display_name"></select>
+      </div>
+      <div class="">
+        <label for="id_alarm_display_text">Text</label>
+        <input class="" id="id_alarm_display_text"/>
+      </div>
+      <div class="">
+        <label for="id_alarm_display_duration">Duration</label>
+        <input class="" id="id_alarm_display_duration" type="time"/>
+      </div>
+      <div class="">
+        <label for="id_alarm_display_delay">Delay</label>
+        <input class="" id="id_alarm_display_delay" type="time"/>
+      </div>
+
+      <!-- sound (name, duration, delay, volume) ------------------------- -->
+      <div class="">
+        <label for="id_alarm_sound_name">Name</label>
+        <!-- TODO: fill select for alarm-SOUND -->
+        <select class="" id="id_alarm_sound_name"></select>
+      </div>
+      <div class="">
+        <label for="id_alarm_sound_duration">Duration</label>
+        <input class="" id="id_alarm_sound_duration" type="time"/>
+      </div>
+      <div class="">
+        <label for="id_alarm_sound_delay">Delay</label>
+        <input class="" id="id_alarm_sound_delay" type="time"/>
+      </div>
+      <div class="">
+        <label for="id_alarm_sound_fadein">Fadein</label>
+        <input class="" id="id_alarm_sound_fadein" type="time"/>
+      </div>
+      <div class="">
+        <label for="id_alarm_sound_volume">Volume</label>
+        <input class="" id="id_alarm_sound_volume"/>
+      </div>
+
+       <div class="">
+         <button type="submit"
+                class="">Save</button>
+       </div>
+    </fieldset>
+  </form>
+</div>
+
+<!--
 
 <div id="content_alarm" class="content">
   <div class="list">
@@ -61,3 +166,5 @@
     </li>
   </div>
 </div>
+
+-->

@@ -5,7 +5,7 @@
 #
 # Main Page
 #
-# Author: Benjamin Fuchs
+# Author: Bernhard Bablok
 # License: GPL3
 #
 # Website: https://github.com/bablokb/nerd-alarmclock
@@ -22,8 +22,7 @@
     <title>Nerd-Alarmclock Web</title>
 
     <!-- layout and styling -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/w3.css">
 
     <!-- js scripts -->
     <script src="js/jquery-min.js"></script>
@@ -35,24 +34,6 @@
   </head>
 
   <body>
-
-  %include('menu.tpl')
-
-  <br>
-  <div id="main">
-
-    %include('content_alarm.tpl')
-    %include('content_radio.tpl')
-    %include('content_about.tpl')
-
-  </div>          <!-- id=main        -->
-
-  <script>
-    window.onload = function () {
-      showPart('#content_alarm');
-      $("li:first").addClass("active");
-      getSettings();
-    }
-  </script>
-</body>
+    %include('menu.tpl')
+  </body>
 </html>

@@ -1,6 +1,6 @@
 <!--
 # ----------------------------------------------------------------------------
-# Webinterface for the nerd-clock.
+# Webinterface for the nerd-alarmclock.
 #
 # This file defines the content area for the radio-configuration.
 #
@@ -12,13 +12,41 @@
 # ----------------------------------------------------------------------------
 -->
 
-<div id="content_radio" class="content">
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-sanctus est Lorem ipsum dolor sit amet.
+<div id="id_content_radio" class="content">
+  <form id="id_form_radio" method="post">
+    <fieldset>
+
+      <div class="">
+        <label for="id_channel_list">Channel list</label>
+        <!-- TODO: select-list for channel-lists -->
+        <!-- TODO: implement on_channel_list_select() -->
+        <select class="" id="id_channel_list"
+                         on_select="on_channel_list_select()"></select>
+      </div>
+
+      <div class="">
+        <label for="id_channels">Channels</label>
+        <!-- TODO: select-list for channels -->
+        <!-- TODO: implement on_channel_select() -->
+        <select class="" id="id_channels"
+                         on_select="on_channel_select()"></select>
+      </div>
+
+      <div class="">
+        <label for="id_speaker_volume_day">Volume day</label>
+        <input class="" id="id_speaker_volume_day"></input>
+      </div>
+
+      <div class="">
+        <label for="id_speaker_volume_night">Volume night</label>
+        <input class="" id="id_speaker_volume_night"></input>
+      </div>
+
+       <div class="">
+         <button type="submit"
+                class="">Save</button>
+       </div>
+    </fieldset>
+  </form>
 </div>
+
