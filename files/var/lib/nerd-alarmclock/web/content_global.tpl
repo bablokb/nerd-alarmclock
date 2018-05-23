@@ -12,6 +12,28 @@
 # ----------------------------------------------------------------------------
 -->
 
+<!-- helper scripts   --------------------------------------------------   -->
+
+<script  type="text/javascript">
+  function read_global_settings() {
+    $.ajax({
+      url: "/globals/read"
+    }).then(function(data) {
+      for (var key in data) {
+        var name = '#id_' + key.replace(/\./g,'_');
+        $(name).val(data[key]);
+      }
+    });
+  }
+
+  function on_select_tab_global() {
+    console.error("on_select_tab_global()");
+    read_global_settings();
+  }
+</script>
+
+<!-- form for global settings   ----------------------------------------   -->
+
 <div id="id_content_global" class="content">
   <form id="id_form_global" method="post">
     <fieldset>
