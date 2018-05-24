@@ -16,6 +16,11 @@
 
 <script  type="text/javascript">
 
+  // add event-listeners
+  $(document).ready(function() {
+    $('#id_alarm_state').on('click',on_toggle_alarm_state);
+  });
+
   // read alarm-data from server
   function read_alarm_settings() {
     $.ajax({
@@ -25,7 +30,7 @@
       nclock.alarms = data;
       on_alarm_nr_select();
     });
-  }
+  };
 
   // hook to run when tab is selected
   function on_select_tab_alarm() {
@@ -36,7 +41,7 @@
     } else {
       on_alarm_nr_select();
     }
-  }
+  };
 
   // set value of an element
   // TODO: support checkbox, radiobox, select
@@ -50,7 +55,7 @@
         $('#id_'+name).val(data[key]);    // set value directly
       }
     }
-  }
+  };
 
   // event-handler if alarm-number changes
   function on_alarm_nr_select(event) {
@@ -61,64 +66,83 @@
     // update values in form
     var data = nclock.alarms[nclock.alarm_nr-1];
     set_value(data);
-  }
+  };
+
+  // event-handler to change alarm-state
+  function on_toggle_alarm_state(event) {
+    console.error("event:", event);
+    if ($(event.target).val() === 'enabled') {
+      $(event.target).val('disabled');
+      $(event.target).removeClass("w3-border-blue w3-text-blue");
+      $(event.target).addClass("w3-border-red w3-text-red");
+    } else {
+      $(event.target).val('enabled');
+      $(event.target).addClass("w3-border-blue w3-text-blue");
+      $(event.target).removeClass("w3-border-red w3-text-red");
+    }
+  };
 </script>
 
 <!-- form for alarm settings   -----------------------------------------   -->
 
 <div id="id_content_alarm" class="content">
-  <form id="id_form_alarm" method="post">
+  <form id="id_form_alarm" method="post"
+        class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
     <fieldset>
 
       <!-- alarm-selection ----------------------------------------------- -->
-      <div class="">
-        <label for="id_alarm_nr">Nr</label>
+      <div class="w3-row-padding w3-section">
+        <label for="id_alarm_nr" class="w3-col l1">Nr</label>
         <!-- TODO: implement on_alarm_nr_select() -->
-        <select class="" id="id_alarm_nr"
+        <select class="w3-select w3-col l1" id="id_alarm_nr"
                 onselect="on_alarm_nr_select()"></select>
+        <label for="id_alarm_name" class="w3-col l1">Name</label>
+        <input class="w3-input w3-col l4" id="id_alarm_name" type="text"/>
       </div>
 
       <!-- state --------------------------------------------------------- -->
-      <div class="">
-        <label for="id_alarm_state">State</label>
-        <!-- TODO: toggle-button -->
-        <button id="id_alarm_state">On/off</button>
+      <div class="w3-row-padding w3-section">
+        <label for="id_alarm_state" class="w3-col l1">State</label>
+        <input id="id_alarm_state"
+               class="w3-col l1 w3-button w3-round-xxlarge
+               w3-border w3-border-blue"
+               type="button" value="enabled" name="alarm_state"/>
       </div>
 
       <!-- time ---------------------------------------------------------- -->
       <div class="">
-        <label for="id_alarm_time">Time</label>
-        <input class="" id="id_alarm_time" type="time"/>
+        <label for="id_alarm_time" class="w3-col l1">Time</label>
+        <input class="w3-input" id="id_alarm_time" type="time"/>
       </div>
 
       <!-- snooze -------------------------------------------------------- -->
       <div class="">
-        <label for="id_alarm_snooze">Snooze</label>
-        <input class="" id="id_alarm_snooze" type="time"/>
+        <label for="id_alarm_snooze" class="w3-col l1">Snooze</label>
+        <input class="w3-input" id="id_alarm_snooze" type="time"/>
       </div>
 
       <!-- days ---------------------------------------------------------- -->
       <div class="">
-        <label for="id_alarm_days">Days</label>
+        <label for="id_alarm_days" class="w3-col l1">Days</label>
         <!-- TODO: fill select for days -->
-        <select class="" id="id_alarm_days"></select>
+        <select class="w3-select" id="id_alarm_days"></select>
       </div>
 
       <!-- LED (name, duration, delay) ----------------------------------- -->
       <fieldset>
         <legend>LED-Alarm</legend>
         <div class="">
-          <label for="id_alarm_led_name">Name</label>
+          <label for="id_alarm_led_name" class="w3-col l1">Name</label>
           <!-- TODO: fill select for alarm-LED -->
-          <select class="" id="id_alarm_led_name"></select>
+          <select class="w3-select" id="id_alarm_led_name"></select>
         </div>
         <div class="">
-          <label for="id_alarm_led_duration">Duration</label>
-          <input class="" id="id_alarm_led_duration" type="time"/>
+          <label for="id_alarm_led_duration" class="w3-col l1">Duration</label>
+          <input class="w3-input" id="id_alarm_led_duration" type="time"/>
         </div>
         <div class="">
-          <label for="id_alarm_led_delay">Delay</label>
-          <input class="" id="id_alarm_led_delay" type="time"/>
+          <label for="id_alarm_led_delay" class="w3-col l1">Delay</label>
+          <input class="w3-input" id="id_alarm_led_delay" type="time"/>
         </div>
       </fieldset>
 
@@ -126,21 +150,21 @@
       <fieldset>
         <legend>Display-Alarm</legend>
         <div class="">
-          <label for="id_alarm_display_name">Name</label>
+          <label for="id_alarm_display_name" class="w3-col l1">Name</label>
           <!-- TODO: fill select for alarm-DISPLAY -->
-          <select class="" id="id_alarm_display_name"></select>
+          <select class="w3-select" id="id_alarm_display_name"></select>
         </div>
         <div class="">
-          <label for="id_alarm_display_text">Text</label>
-          <input class="" id="id_alarm_display_text"/>
+          <label for="id_alarm_display_text" class="w3-col l1">Text</label>
+          <input class="w3-input" id="id_alarm_display_text"/>
         </div>
         <div class="">
-          <label for="id_alarm_display_duration">Duration</label>
-          <input class="" id="id_alarm_display_duration" type="time"/>
+          <label for="id_alarm_display_duration" class="w3-col l1">Duration</label>
+          <input class="w3-input" id="id_alarm_display_duration" type="time"/>
         </div>
         <div class="">
-          <label for="id_alarm_display_delay">Delay</label>
-          <input class="" id="id_alarm_display_delay" type="time"/>
+          <label for="id_alarm_display_delay" class="w3-col l1">Delay</label>
+          <input class="w3-input" id="id_alarm_display_delay" type="time"/>
         </div>
       </fieldset>
 
@@ -148,25 +172,25 @@
       <fieldset>
         <legend>Sound-Alarm</legend>
         <div class="">
-          <label for="id_alarm_sound_name">Name</label>
+          <label for="id_alarm_sound_name" class="w3-col l1">Name</label>
           <!-- TODO: fill select for alarm-SOUND -->
-          <select class="" id="id_alarm_sound_name"></select>
+          <select class="w3-select" id="id_alarm_sound_name"></select>
         </div>
         <div class="">
-          <label for="id_alarm_sound_duration">Duration</label>
-          <input class="" id="id_alarm_sound_duration" type="time"/>
+          <label for="id_alarm_sound_duration" class="w3-col l1">Duration</label>
+          <input class="w3-input" id="id_alarm_sound_duration" type="time"/>
         </div>
         <div class="">
-          <label for="id_alarm_sound_delay">Delay</label>
-          <input class="" id="id_alarm_sound_delay" type="time"/>
+          <label for="id_alarm_sound_delay" class="w3-col l1">Delay</label>
+          <input class="w3-input" id="id_alarm_sound_delay" type="time"/>
         </div>
         <div class="">
-          <label for="id_alarm_sound_fadein">Fadein</label>
-          <input class="" id="id_alarm_sound_fadein" type="time"/>
+          <label for="id_alarm_sound_fadein" class="w3-col l1">Fadein</label>
+          <input class="w3-input" id="id_alarm_sound_fadein" type="time"/>
         </div>
         <div class="">
-          <label for="id_alarm_sound_volume">Volume</label>
-          <input class="" id="id_alarm_sound_volume"/>
+          <label for="id_alarm_sound_volume" class="w3-col l1">Volume</label>
+          <input class="w3-input" id="id_alarm_sound_volume"/>
         </div>
       </fieldset>
 
