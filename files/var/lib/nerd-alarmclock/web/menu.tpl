@@ -15,14 +15,17 @@
 <!-- helper scripts   ------------------------------------------------   -->
 
 <script  type="text/javascript">
-  var selected_tab = null;
+  // global variables
+  var nclock = {};
+  nclock.selected_tab = null;
+
   function openTab(button,tabName) {
 
     $(".tab").css("display","none");          // hide all tabs ...
     $(tabName).css("display","block");        // and show selected tab
     $(".detail").removeClass("w3-blue-gray"); // reset button color
     $(button).addClass("w3-blue-gray");       // active button is different
-    selected_tab = button;
+    nclock.selected_tab = button;
 
     // execute load-hook (remove #id_)
     hookFunc = "on_select_"+tabName.substring(4);
@@ -30,7 +33,7 @@
   };
 
   function openDefaultTab() {
-    if (!selected_tab) {
+    if (!nclock.selected_tab) {
       // select alarm-tab as default
       $("#id_btn_alarm").click();
     }
