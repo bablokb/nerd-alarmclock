@@ -12,6 +12,60 @@
 # ----------------------------------------------------------------------------
 -->
 
+<!-- helper scripts   --------------------------------------------------   -->
+
+<script  type="text/javascript">
+
+  // read alarm-data from server
+  function read_alarm_settings() {
+    $.ajax({
+      url: "/alarms/read"
+    }).then(function(data) {
+      console.error("data: ",data);
+      nclock.alarms = data;
+      on_alarm_nr_select();
+    });
+  }
+
+  // hook to run when tab is selected
+  function on_select_tab_alarm() {
+    console.error("on_select_tab_alarm()");
+    if (!nclock.hasOwnProperty("alarms")) {
+      nclock.alarm_nr = 1;
+      read_alarm_settings();
+    } else {
+      on_alarm_nr_select();
+    }
+  }
+
+  // set value of an element
+  // TODO: support checkbox, radiobox, select
+  function set_value(data,prefix='') {
+    for (var key in data) {
+      var name = (prefix ? prefix+'_':'') + key.replace(/\./g,'_');
+      var value = data[key];
+      if (typeof value === 'object') {
+        set_value(value,name);            // recurse
+      } else {
+        $('#id_'+name).val(data[key]);    // set value directly
+      }
+    }
+  }
+
+  // event-handler if alarm-number changes
+  function on_alarm_nr_select(event) {
+    if (event) {
+      console.error("event:", event);
+      // nclock.alarm_nr = ... ;
+    }
+    // update values in form
+    var data = nclock.alarms[nclock.alarm_nr-1];
+    set_value(data);
+  }
+</script>
+
+<!-- form for alarm settings   -----------------------------------------   -->
+
 <div id="id_content_alarm" class="content">
   <form id="id_form_alarm" method="post">
     <fieldset>
@@ -51,61 +105,70 @@
       </div>
 
       <!-- LED (name, duration, delay) ----------------------------------- -->
-      <div class="">
-        <label for="id_alarm_led_name">Name</label>
-        <!-- TODO: fill select for alarm-LED -->
-        <select class="" id="id_alarm_led_name"></select>
-      </div>
-      <div class="">
-        <label for="id_alarm_led_duration">Duration</label>
-        <input class="" id="id_alarm_led_duration" type="time"/>
-      </div>
-      <div class="">
-        <label for="id_alarm_led_delay">Delay</label>
-        <input class="" id="id_alarm_led_delay" type="time"/>
-      </div>
+      <fieldset>
+        <legend>LED-Alarm</legend>
+        <div class="">
+          <label for="id_alarm_led_name">Name</label>
+          <!-- TODO: fill select for alarm-LED -->
+          <select class="" id="id_alarm_led_name"></select>
+        </div>
+        <div class="">
+          <label for="id_alarm_led_duration">Duration</label>
+          <input class="" id="id_alarm_led_duration" type="time"/>
+        </div>
+        <div class="">
+          <label for="id_alarm_led_delay">Delay</label>
+          <input class="" id="id_alarm_led_delay" type="time"/>
+        </div>
+      </fieldset>
 
       <!-- display (name, text, duration, delay) ------------------------- -->
-      <div class="">
-        <label for="id_alarm_display_name">Name</label>
-        <!-- TODO: fill select for alarm-DISPLAY -->
-        <select class="" id="id_alarm_display_name"></select>
-      </div>
-      <div class="">
-        <label for="id_alarm_display_text">Text</label>
-        <input class="" id="id_alarm_display_text"/>
-      </div>
-      <div class="">
-        <label for="id_alarm_display_duration">Duration</label>
-        <input class="" id="id_alarm_display_duration" type="time"/>
-      </div>
-      <div class="">
-        <label for="id_alarm_display_delay">Delay</label>
-        <input class="" id="id_alarm_display_delay" type="time"/>
-      </div>
+      <fieldset>
+        <legend>Display-Alarm</legend>
+        <div class="">
+          <label for="id_alarm_display_name">Name</label>
+          <!-- TODO: fill select for alarm-DISPLAY -->
+          <select class="" id="id_alarm_display_name"></select>
+        </div>
+        <div class="">
+          <label for="id_alarm_display_text">Text</label>
+          <input class="" id="id_alarm_display_text"/>
+        </div>
+        <div class="">
+          <label for="id_alarm_display_duration">Duration</label>
+          <input class="" id="id_alarm_display_duration" type="time"/>
+        </div>
+        <div class="">
+          <label for="id_alarm_display_delay">Delay</label>
+          <input class="" id="id_alarm_display_delay" type="time"/>
+        </div>
+      </fieldset>
 
       <!-- sound (name, duration, delay, volume) ------------------------- -->
-      <div class="">
-        <label for="id_alarm_sound_name">Name</label>
-        <!-- TODO: fill select for alarm-SOUND -->
-        <select class="" id="id_alarm_sound_name"></select>
-      </div>
-      <div class="">
-        <label for="id_alarm_sound_duration">Duration</label>
-        <input class="" id="id_alarm_sound_duration" type="time"/>
-      </div>
-      <div class="">
-        <label for="id_alarm_sound_delay">Delay</label>
-        <input class="" id="id_alarm_sound_delay" type="time"/>
-      </div>
-      <div class="">
-        <label for="id_alarm_sound_fadein">Fadein</label>
-        <input class="" id="id_alarm_sound_fadein" type="time"/>
-      </div>
-      <div class="">
-        <label for="id_alarm_sound_volume">Volume</label>
-        <input class="" id="id_alarm_sound_volume"/>
-      </div>
+      <fieldset>
+        <legend>Sound-Alarm</legend>
+        <div class="">
+          <label for="id_alarm_sound_name">Name</label>
+          <!-- TODO: fill select for alarm-SOUND -->
+          <select class="" id="id_alarm_sound_name"></select>
+        </div>
+        <div class="">
+          <label for="id_alarm_sound_duration">Duration</label>
+          <input class="" id="id_alarm_sound_duration" type="time"/>
+        </div>
+        <div class="">
+          <label for="id_alarm_sound_delay">Delay</label>
+          <input class="" id="id_alarm_sound_delay" type="time"/>
+        </div>
+        <div class="">
+          <label for="id_alarm_sound_fadein">Fadein</label>
+          <input class="" id="id_alarm_sound_fadein" type="time"/>
+        </div>
+        <div class="">
+          <label for="id_alarm_sound_volume">Volume</label>
+          <input class="" id="id_alarm_sound_volume"/>
+        </div>
+      </fieldset>
 
        <div class="">
          <button type="submit"
