@@ -18,6 +18,7 @@
 
   // add event-listeners
   $(document).ready(function() {
+    $('#id_alarm_nr').on('change',on_alarm_nr_changed);
     $('#id_alarm_state').on('click',on_toggle_alarm_state);
   });
 
@@ -26,15 +27,13 @@
     $.ajax({
       url: "/alarms/read"
     }).then(function(data) {
-      console.error("data: ",data);
       nclock.alarms = data;
-      on_alarm_nr_select();
+      on_alarm_nr_changed();
     });
   };
 
   // hook to run when tab is selected
   function on_select_tab_alarm() {
-    console.error("on_select_tab_alarm()");
     if (!nclock.hasOwnProperty("alarms")) {
       nclock.alarm_nr = 1;
       read_alarm_settings();
@@ -58,10 +57,9 @@
   };
 
   // event-handler if alarm-number changes
-  function on_alarm_nr_select(event) {
+  function on_alarm_nr_changed(event) {
     if (event) {
-      console.error("event:", event);
-      // nclock.alarm_nr = ... ;
+      nclock.alarm_nr = $(event.target).val();
     }
     // update values in form
     var data = nclock.alarms[nclock.alarm_nr-1];
@@ -70,7 +68,6 @@
 
   // event-handler to change alarm-state
   function on_toggle_alarm_state(event) {
-    console.error("event:", event);
     if ($(event.target).val() === 'enabled') {
       $(event.target).val('disabled');
       $(event.target).removeClass("w3-border-blue w3-text-blue");
@@ -94,8 +91,12 @@
       <div class="w3-row-padding w3-section">
         <label for="id_alarm_nr" class="w3-col l1">Nr</label>
         <!-- TODO: implement on_alarm_nr_select() -->
-        <select class="w3-select w3-col l1" id="id_alarm_nr"
-                onselect="on_alarm_nr_select()"></select>
+        <select class="w3-select w3-col l1" id="id_alarm_nr">
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+        </select>
         <label for="id_alarm_name" class="w3-col l1">Name</label>
         <input class="w3-input w3-col l4" id="id_alarm_name" type="text"/>
       </div>
