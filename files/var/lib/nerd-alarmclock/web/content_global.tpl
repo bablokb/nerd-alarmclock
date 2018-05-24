@@ -24,12 +24,12 @@
         $(name).val(data[key]);
       }
     });
-  }
+  };
 
   function on_select_tab_global() {
     console.error("on_select_tab_global()");
     read_global_settings();
-  }
+  };
 </script>
 
 <!-- form for global settings   ----------------------------------------   -->

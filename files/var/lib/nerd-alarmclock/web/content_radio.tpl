@@ -24,12 +24,12 @@
         $(name).val(data[key]);
       }
     });
-  }
+  };
 
   function on_select_tab_radio() {
     console.error("on_select_tab_radio()");
     read_radio_settings();
-  }
+  };
 </script>
 
 <!-- form for radio settings   -----------------------------------------   -->
