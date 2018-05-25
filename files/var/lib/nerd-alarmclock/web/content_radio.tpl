@@ -19,6 +19,7 @@
     $.ajax({
       url: "/radio/read"
     }).then(function(data) {
+      nclock.radio = data;
       // TODO: nclock.lists might not be available at this point
       index = data.hasOwnProperty("radio.current.list") ?
                 nclock.lists.channel_lists.findIndex(function(name) {
@@ -27,10 +28,8 @@
       fill_list(nclock.lists.channels[index],$('#id_channels'),
                              function(element) {return element.name;}
                 );
-      for (var key in data) {
-        var name = '#id_' + key.replace(/\./g,'_');
-        $(name).val(data[key]);
-      }
+      // server-settings -> UI
+      set_value(data);
     });
   };
 
@@ -41,7 +40,6 @@
 
   // hook to run when tab is selected
   function on_select_tab_radio() {
-    console.error("on_select_tab_radio()");
     read_radio_settings();
   };
 </script>

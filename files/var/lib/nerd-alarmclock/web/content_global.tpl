@@ -19,10 +19,7 @@
     $.ajax({
       url: "/globals/read"
     }).then(function(data) {
-      for (var key in data) {
-        var name = '#id_' + key.replace(/\./g,'_');
-        $(name).val(data[key]);
-      }
+      set_value(data);
     });
   };
 
@@ -45,7 +42,6 @@
 
   // hook function for tab-selection
   function on_select_tab_global() {
-    console.error("on_select_tab_global()");
     read_global_settings();
   };
 </script>
