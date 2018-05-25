@@ -47,35 +47,39 @@
 <!-- form for radio settings   -----------------------------------------   -->
 
 <div id="id_content_radio" class="content">
-  <form id="id_form_radio" method="post">
+  <form id="id_form_radio" method="post"
+         class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
     <fieldset>
-
-      <div class="">
-        <label for="id_channel_list">Channel list</label>
+      <legend>Channels</legend>
+      <div class="w3-row-padding w3-section">
+        <label for="id_channel_list" class="w3-col l1">Channel list</label>
         <!-- TODO: implement on_channel_lists_select() -->
-        <select class="" id="id_channel_lists"></select>
+        <select class="w3-select w3-col l1" id="id_channel_lists"></select>
       </div>
 
-      <div class="">
-        <label for="id_channels">Channels</label>
-        <select class="" id="id_channels"></select>
+      <div class="w3-row-padding w3-section">
+        <label for="id_channels" class="w3-col l1">Channels</label>
+        <select class="w3-select w3-col l1" id="id_channels"></select>
       </div>
-
-      <div class="">
-        <label for="id_speaker_volume_day">Volume day</label>
-        <input class="" id="id_speaker_volume_day"></input>
-      </div>
-
-      <div class="">
-        <label for="id_speaker_volume_night">Volume night</label>
-        <input class="" id="id_speaker_volume_night"></input>
-      </div>
-
-       <div class="">
-         <button type="submit"
-                class="">Save</button>
-       </div>
     </fieldset>
+
+    <fieldset>
+      <legend>Volume</legend>
+      <div class="w3-row-padding w3-section">
+        <label for="id_speaker_volume_day" class="w3-col l1">Volume day</label>
+        <input class="w3-input w3-col l1" id="id_speaker_volume_day"></input>
+      </div>
+
+      <div class="w3-row-padding w3-section">
+        <label for="id_speaker_volume_night" class="w3-col l1">Volume night</label>
+        <input class="w3-input w3-col l1" id="id_speaker_volume_night"></input>
+      </div>
+    </fieldset>
+
+    <div class="w3-section padding-top">
+      <button type="submit" class="w3-button w3-round-xxlarge
+               w3-border w3-border-blue">Save</button>
+    </div>
   </form>
 </div>
 
