@@ -63,19 +63,6 @@
       </div>
     </fieldset>
 
-    <fieldset>
-      <legend>Volume</legend>
-      <div class="w3-row-padding w3-section">
-        <label for="id_speaker_volume_day" class="w3-col l1">Volume day</label>
-        <input class="w3-input w3-col l1" id="id_speaker_volume_day"></input>
-      </div>
-
-      <div class="w3-row-padding w3-section">
-        <label for="id_speaker_volume_night" class="w3-col l1">Volume night</label>
-        <input class="w3-input w3-col l1" id="id_speaker_volume_night"></input>
-      </div>
-    </fieldset>
-
     <div class="w3-section padding-top">
       <button type="submit" class="w3-button w3-round-xxlarge
                w3-border w3-border-blue">Save</button>
