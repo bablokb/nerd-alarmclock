@@ -26,6 +26,24 @@
     });
   };
 
+  // fill list of options
+  // TODO: move to generic functions module
+  function fill_list(data,element,func) {
+    data.forEach(function(opt,index) {
+      $(this).append($("<option/>", {
+        value: index,
+        text:  func ? func(opt) : opt
+      }));
+    },element);
+  };
+
+  // fill select-tag with options (triggered from main.tpl)
+  function global_fill_lists(data) {
+    fill_list(data.led_modes,$('#id_led_mode'));
+    fill_list(data.display_modes,$('#id_display_mode'));
+  };
+
+  // hook function for tab-selection
   function on_select_tab_global() {
     console.error("on_select_tab_global()");
     read_global_settings();
@@ -52,7 +70,6 @@
 
       <div class="">
         <label for="id_display_mode">Display mode</label>
-        <!-- TODO: fill list of display-modes -->
         <select class="" id="id_display_mode"></select>
       </div>
 
@@ -70,7 +87,6 @@
 
       <div class="">
         <label for="id_led_mode">LED mode</label>
-        <!-- TODO: fill list of led-modes -->
         <select class="" id="id_led_mode"></select>
       </div>
 

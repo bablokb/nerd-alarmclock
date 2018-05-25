@@ -56,6 +56,13 @@
     }
   };
 
+  // fill select-tag with options (triggered from main.tpl)
+  function alarm_fill_lists(data) {
+    fill_list(data.led_alarms,$('#id_alarm_led_name'));
+    fill_list(data.display_alarms,$('#id_alarm_display_name'));
+    fill_list(data.sound_alarms,$('#id_alarm_sound_name'));
+  };
+
   // event-handler if alarm-number changes
   function on_alarm_nr_changed(event) {
     if (event) {
@@ -134,7 +141,6 @@
         <legend>LED-Alarm</legend>
         <div class="">
           <label for="id_alarm_led_name" class="w3-col l1">Name</label>
-          <!-- TODO: fill select for alarm-LED -->
           <select class="w3-select" id="id_alarm_led_name"></select>
         </div>
         <div class="">
@@ -152,7 +158,6 @@
         <legend>Display-Alarm</legend>
         <div class="">
           <label for="id_alarm_display_name" class="w3-col l1">Name</label>
-          <!-- TODO: fill select for alarm-DISPLAY -->
           <select class="w3-select" id="id_alarm_display_name"></select>
         </div>
         <div class="">
@@ -174,7 +179,6 @@
         <legend>Sound-Alarm</legend>
         <div class="">
           <label for="id_alarm_sound_name" class="w3-col l1">Name</label>
-          <!-- TODO: fill select for alarm-SOUND -->
           <select class="w3-select" id="id_alarm_sound_name"></select>
         </div>
         <div class="">

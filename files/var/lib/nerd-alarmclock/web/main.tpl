@@ -1,8 +1,8 @@
 <!--
 # ----------------------------------------------------------------------------
-# Webinterface for the nerd-clock.
+# Webinterface for the Nerd-Alarmclock.
 #
-# This file defines the navigation-menu
+# This file defines the top-level template include.
 #
 # Author: Bernhard Bablok
 # License: GPL3
@@ -39,7 +39,22 @@
     }
   };
 
+  // read config-data from server
+  function read_list_settings() {
+    $.ajax({
+      url: "/lists/read"
+    }).then(function(data) {
+      console.error("lists: ",data);
+      nclock.lists = data;          // save in global var
+      global_fill_lists(data);      // defined in content_global.tpl
+      alarm_fill_lists(data);       // defined in content_alarm.tpl
+      radio_fill_lists(data);       // defined in content_radio.tpl
+    });
+  };
+
+  // one-time initializations
   $(document).ready(function() {
+    read_list_settings();
     openDefaultTab();
   });
 </script>
