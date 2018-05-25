@@ -38,7 +38,7 @@
       nclock.alarm_nr = 1;
       read_alarm_settings();
     } else {
-      on_alarm_nr_select();
+      on_alarm_nr_changed();
     }
   };
 
