@@ -31,7 +31,16 @@ function set_value(data,prefix='') {
     if (typeof value === 'object') {
       set_value(value,name);            // recurse
     } else {
-      $('#id_'+name).val(data[key]);    // set value directly
+      var id = '#id_'+name;
+      var node_type = $(id).prop('nodeName');
+      if (node_type === 'select') {
+        $(id).find('option[text="'+value+'"]').attr('selected', 'selected');
+      } else if (node_type === 'input') {
+        var input_type = $(id).attr('type');
+        if (input_type === 'text') {
+          $(id).val(data[key]);    // set value directly
+        }
+      }
     }
   }
 };
