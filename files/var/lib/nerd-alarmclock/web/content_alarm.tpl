@@ -42,20 +42,6 @@
     }
   };
 
-  // set value of an element
-  // TODO: support checkbox, radiobox, select
-  function set_value(data,prefix='') {
-    for (var key in data) {
-      var name = (prefix ? prefix+'_':'') + key.replace(/\./g,'_');
-      var value = data[key];
-      if (typeof value === 'object') {
-        set_value(value,name);            // recurse
-      } else {
-        $('#id_'+name).val(data[key]);    // set value directly
-      }
-    }
-  };
-
   // fill select-tag with options (triggered from main.tpl)
   function alarm_fill_lists(data) {
     fill_list(data.led_alarms,$('#id_alarm_led_name'));
