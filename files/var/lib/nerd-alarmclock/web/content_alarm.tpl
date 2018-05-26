@@ -54,8 +54,15 @@
     if (event) {
       nclock.alarm_nr = $(event.target).val();
     }
-    // update values in form
     var data = nclock.alarms[nclock.alarm_nr-1];
+    // convert day-array to individual settings
+    for (var i=1; i<8; i++) {
+      data['alarm.day.'+i] = "disabled";
+    }
+    data['alarm.days'].forEach(function(day) {
+      data['alarm.day.'+day] = "enabled";
+    });
+    // update values in form
     set_value(data);
   };
 
