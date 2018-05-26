@@ -40,13 +40,16 @@ function set_value(data,prefix='') {
       } else if (node_type === 'INPUT') {
         var input_type = $(id).attr('type');
         if (input_type === 'time') {
-          // implement
+          if (!value.includes(':')) {
+            value = pad(~~(value/60)) + ':' + pad(value%60);
+          }
+          $(id).val(value);
         } else if (input_type === 'color') {
           $(id).val(rgbToHex(value));
         } else if (input_type === 'button') {
           // implement
         } else {
-          $(id).val(data[key]);    // set value directly
+          $(id).val(value);    // set value directly
         }
       }
     }
@@ -71,4 +74,11 @@ function hexToRgb(value) {
     parseInt(result[2], 16),
     parseInt(result[3], 16)
                    ] : [0,0,0];
+}
+
+// --- pad time values   ----------------------------------------------------
+
+function pad(num) {
+  var s = "00" + num;
+  return s.substr(s.length-2);
 }
