@@ -33,9 +33,11 @@ function set_value(data,prefix='') {
     } else {
       var id = '#id_'+name;
       var node_type = $(id).prop('nodeName');
-      if (node_type === 'select') {
-        $(id).find('option[text="'+value+'"]').attr('selected', 'selected');
-      } else if (node_type === 'input') {
+      if (node_type === 'SELECT') {
+         $(id+' option').filter(function() {
+           return $(this).text() == value;
+         }).prop("selected", true);
+      } else if (node_type === 'INPUT') {
         var input_type = $(id).attr('type');
         if (input_type === 'text') {
           $(id).val(data[key]);    // set value directly
