@@ -1,23 +1,12 @@
-// Controll what to show.
-showPart=function(id) {
-  parts = [
-           "#content_alarm",
-           "#content_radio",
-           "#content_about"
-           ];
-  parts.forEach(function(part) {
-      if (part == id) {
-        $(part).show();
-      } else {
-        $(part).hide();
-      }
-    });
-}
+// ---------------------------------------------------------------------------
+// Webinterface for the Nerd-Alarmclock.
 
-// Set ative menu.
-$(document).ready(function () {
-    $('a').click(function () {
-        $('.menu').find('li.active').removeClass("active");
-        $(this).parents("li").addClass("active");
-    });
-});
+// This file contains some generic support functions.
+//
+// Author: Bernhard Bablok
+// License: GPL3
+//
+// Website: https://github.com/bablokb/nerd-alarmclock
+//
+// ---------------------------------------------------------------------------
+
