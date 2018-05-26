@@ -24,17 +24,6 @@
     });
   };
 
-  // fill list of options
-  // TODO: move to generic functions module
-  function fill_list(data,element,func) {
-    data.forEach(function(opt,index) {
-      $(this).append($("<option/>", {
-        value: index,
-        text:  func ? func(opt) : opt
-      }));
-    },element);
-  };
-
   // fill select-tag with options (triggered from main.tpl)
   function global_fill_lists(data) {
     fill_list(data.led_modes,$('#id_led_mode'));

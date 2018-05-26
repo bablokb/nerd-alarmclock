@@ -10,3 +10,14 @@
 //
 // ---------------------------------------------------------------------------
 
+// --- add options to a select-tag   -----------------------------------------
+
+function fill_list(data,element,func) {
+  data.forEach(function(opt,index) {
+    $(this).append($("<option/>", {
+      value: index,
+      text:  func ? func(opt) : opt
+    }));
+  },element);
+};
+
