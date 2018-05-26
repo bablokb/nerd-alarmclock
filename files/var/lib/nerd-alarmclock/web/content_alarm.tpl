@@ -90,28 +90,28 @@
            <option value="4">4</option>
         </select>
         <label for="id_alarm_name" class="w3-col l1">Name</label>
-        <input class="w3-input w3-col l4" id="id_alarm_name" type="text"/>
+        <input type="text" class="w3-input w3-col l4" id="id_alarm_name"/>
       </div>
 
       <!-- state --------------------------------------------------------- -->
       <div class="w3-row-padding w3-section">
         <label for="id_alarm_state" class="w3-col l1">State</label>
-        <input id="id_alarm_state"
+        <input type="button" id="id_alarm_state"
                class="w3-col l1 w3-button w3-round-xxlarge
                w3-border w3-border-blue"
-               type="button" value="enabled" name="alarm_state"/>
+               value="enabled" name="alarm_state"/>
       </div>
 
       <!-- time ---------------------------------------------------------- -->
       <div class="">
         <label for="id_alarm_time" class="w3-col l1">Time</label>
-        <input class="w3-input" id="id_alarm_time" type="time"/>
+        <input type="time" class="w3-input" id="id_alarm_time"/>
       </div>
 
       <!-- snooze -------------------------------------------------------- -->
       <div class="">
         <label for="id_alarm_snooze" class="w3-col l1">Snooze</label>
-        <input class="w3-input" id="id_alarm_snooze" type="time"/>
+        <input type="time" class="w3-input" id="id_alarm_snooze"/>
       </div>
 
       <!-- days ---------------------------------------------------------- -->
@@ -130,11 +130,11 @@
         </div>
         <div class="">
           <label for="id_alarm_led_duration" class="w3-col l1">Duration</label>
-          <input class="w3-input" id="id_alarm_led_duration" type="time"/>
+          <input type="time" class="w3-input" id="id_alarm_led_duration"/>
         </div>
         <div class="">
           <label for="id_alarm_led_delay" class="w3-col l1">Delay</label>
-          <input class="w3-input" id="id_alarm_led_delay" type="time"/>
+          <input type="time" class="w3-input" id="id_alarm_led_delay"/>
         </div>
       </fieldset>
 
@@ -147,15 +147,15 @@
         </div>
         <div class="">
           <label for="id_alarm_display_text" class="w3-col l1">Text</label>
-          <input class="w3-input" id="id_alarm_display_text"/>
+          <input type="text" class="w3-input" id="id_alarm_display_text"/>
         </div>
         <div class="">
           <label for="id_alarm_display_duration" class="w3-col l1">Duration</label>
-          <input class="w3-input" id="id_alarm_display_duration" type="time"/>
+          <input type="time" class="w3-input" id="id_alarm_display_duration"/>
         </div>
         <div class="">
           <label for="id_alarm_display_delay" class="w3-col l1">Delay</label>
-          <input class="w3-input" id="id_alarm_display_delay" type="time"/>
+          <input type="time" class="w3-input" id="id_alarm_display_delay"/>
         </div>
       </fieldset>
 
@@ -168,19 +168,19 @@
         </div>
         <div class="">
           <label for="id_alarm_sound_duration" class="w3-col l1">Duration</label>
-          <input class="w3-input" id="id_alarm_sound_duration" type="time"/>
+          <input type="time" class="w3-input" id="id_alarm_sound_duration"/>
         </div>
         <div class="">
           <label for="id_alarm_sound_delay" class="w3-col l1">Delay</label>
-          <input class="w3-input" id="id_alarm_sound_delay" type="time"/>
+          <input type="time" class="w3-input" id="id_alarm_sound_delay"/>
         </div>
         <div class="">
           <label for="id_alarm_sound_fadein" class="w3-col l1">Fadein</label>
-          <input class="w3-input" id="id_alarm_sound_fadein" type="time"/>
+          <input type="time" class="w3-input" id="id_alarm_sound_fadein"/>
         </div>
         <div class="">
           <label for="id_alarm_sound_volume" class="w3-col l1">Volume</label>
-          <input class="w3-input" id="id_alarm_sound_volume"/>
+          <input type="number" class="w3-input" id="id_alarm_sound_volume"/>
         </div>
       </fieldset>
 

@@ -45,12 +45,12 @@
       <legend>Day/Night</legend>
       <div class="w3-row-padding w3-section">
         <label for="id_day_start" class="w3-col l1">Day start</label>
-        <input class="w3-input w3-col l1" id="id_day_start" type="time"></input>
+        <input type="time" class="w3-input w3-col l1" id="id_day_start"/>
       </div>
 
       <div class="w3-row-padding w3-section">
         <label for="id_day_end" class="w3-col l1">Day end</label>
-        <input class="w3-input w3-col l1" id="id_day_end" type="time"></input>
+        <input type="time" class="w3-input w3-col l1" id="id_day_end"/>
       </div>
     </fieldset>
 
@@ -65,12 +65,14 @@
 
       <div class="w3-row-padding w3-section">
         <label for="id_display_brightness_day" class="w3-col l1">Brightness day</label>
-        <input class="w3-input w3-col l1" id="id_display_brightness_day"></input>
+        <input type="number" class="w3-input w3-col l1"
+               id="id_display_brightness_day"/>
       </div>
 
       <div class="w3-row-padding w3-section">
         <label for="id_display_brightness_night" class="w3-col l1">Brightness night</label>
-        <input class="w3-input w3-col l1" id="id_display_brightness_night"></input>
+        <input type="number" class="w3-input w3-col l1"
+               id="id_display_brightness_night"/>
       </div>
     </fieldset>
 
@@ -85,12 +87,14 @@
 
       <div class="w3-row-padding w3-section">
         <label for="id_led_brightness_day" class="w3-col l1">Brightness day</label>
-        <input class="w3-input w3-col l1" id="id_led_brightness_day"></input>
+        <input type="number" class="w3-input w3-col l1"
+               id="id_led_brightness_day"/>
       </div>
 
       <div class="w3-row-padding w3-section">
         <label for="id_led_brightness_night" class="w3-col l1">Brightness night</label>
-        <input class="w3-input w3-col l1" id="id_led_brightness_night"></input>
+        <input type="number" class="w3-input w3-col l1"
+               id="id_led_brightness_night"/>
       </div>
     </fieldset>
 
@@ -100,12 +104,13 @@
       <legend>Lamp</legend>
       <div class="w3-row-padding w3-section">
         <label for="id_led_lamp_rgb" class="w3-col l1">LED-lamp RGB</label>
-        <input type="color" class="w3-input w3-col l1" id="id_led_lamp_rgb"></input>
+        <input type="color" class="w3-input w3-col l1" id="id_led_lamp_rgb"/>
       </div>
 
       <div class="w3-row-padding w3-section">
         <label for="id_led_lamp_brightness" class="w3-col l1">LED-lamp brightness</label>
-        <input class="w3-input w3-col l1" id="id_led_lamp_brightness"></input>
+        <input type="number" class="w3-input w3-col l1"
+               id="id_led_lamp_brightness"/>
       </div>
     </fieldset>
 
