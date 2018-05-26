@@ -96,10 +96,11 @@
       <!-- state --------------------------------------------------------- -->
       <div class="w3-row-padding w3-section">
         <label for="id_alarm_state" class="w3-col l1">State</label>
-        <input type="button" id="id_alarm_state"
-               class="w3-col l1 w3-button w3-round-xxlarge
-               w3-border w3-border-blue"
-               value="enabled" name="alarm_state"/>
+        <label class="switch">
+           <input type="checkbox" id="id_alarm_state"
+                  name="alarm_state"/>
+           <span class="slider round"></span>
+        </label>
       </div>
 
       <!-- time ---------------------------------------------------------- -->
