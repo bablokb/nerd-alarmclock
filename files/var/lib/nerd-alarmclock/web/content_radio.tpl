@@ -35,7 +35,7 @@
 
   // fill select-tag with options (triggered from main.tpl)
   function radio_fill_lists(data) {
-    fill_list(data.channel_lists,$('#id_channel_lists'));
+    fill_list(data.channel_lists,$('#id_radio_current_list'));
   };
 
   // hook to run when tab is selected
@@ -54,7 +54,7 @@
       <div class="w3-row-padding w3-section">
         <label for="id_channel_list" class="w3-col l1">Channel list</label>
         <!-- TODO: implement on_channel_lists_select() -->
-        <select class="w3-select w3-col l1" id="id_channel_lists"></select>
+        <select class="w3-select w3-col l1" id="id_radio_current_list"></select>
       </div>
 
       <div class="w3-row-padding w3-section">
