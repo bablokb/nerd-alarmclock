@@ -96,7 +96,7 @@
       <!-- state --------------------------------------------------------- -->
       <div class="w3-row-padding w3-section">
         <label for="id_alarm_state" class="w3-col l1">State</label>
-        <label class="switch">
+        <label class="switch w3-col">
            <input type="checkbox" id="id_alarm_state"
                   name="alarm_state"/>
            <span class="slider round"></span>
@@ -104,22 +104,36 @@
       </div>
 
       <!-- time ---------------------------------------------------------- -->
-      <div class="">
+      <div class="w3-row-padding w3-section">
         <label for="id_alarm_time" class="w3-col l1">Time</label>
-        <input type="time" class="w3-input" id="id_alarm_time"/>
+        <input type="time" class="w3-input w3-col l1" id="id_alarm_time"/>
       </div>
 
       <!-- snooze -------------------------------------------------------- -->
-      <div class="">
+      <div class="w3-row-padding w3-section">
         <label for="id_alarm_snooze" class="w3-col l1">Snooze</label>
-        <input type="time" class="w3-input" id="id_alarm_snooze"/>
+        <input type="time" class="w3-input w3-col l1" id="id_alarm_snooze"/>
       </div>
 
       <!-- days ---------------------------------------------------------- -->
-      <div class="">
+      <div class="w3-row-padding w3-section">
         <label for="id_alarm_days" class="w3-col l1">Days</label>
-        <!-- TODO: fill select for days -->
-        <select class="w3-select" id="id_alarm_days"></select>
+        <div class="weekDays-selector w3-col l3">
+          <input type="checkbox" id="id_alarm_day_1" class="weekday" />
+          <label for="id_alarm_day_1">Mon</label>
+          <input type="checkbox" id="id_alarm_day_2" class="weekday" />
+          <label for="id_alarm_day_2">Tue</label>
+          <input type="checkbox" id="id_alarm_day_3" class="weekday" />
+          <label for="id_alarm_day_3">Wed</label>
+          <input type="checkbox" id="id_alarm_day_4" class="weekday" />
+          <label for="id_alarm_day_4">Thu</label>
+          <input type="checkbox" id="id_alarm_day_5" class="weekday" />
+          <label for="id_alarm_day_5">Fri</label>
+          <input type="checkbox" id="id_alarm_day_6" class="weekday" />
+          <label for="id_alarm_day_6">Sat</label>
+          <input type="checkbox" id="id_alarm_day_7" class="weekday" />
+          <label for="id_alarm_day_7">Sun</label>
+        </div>
       </div>
 
       <!-- LED (name, duration, delay) ----------------------------------- -->
