@@ -19,7 +19,6 @@
   // add event-listeners
   $(document).ready(function() {
     $('#id_alarm_nr').on('change',on_alarm_nr_changed);
-    $('#id_alarm_state').on('click',on_toggle_alarm_state);
   });
 
   // read alarm-data from server
@@ -64,19 +63,6 @@
     });
     // update values in form
     set_value(data);
-  };
-
-  // event-handler to change alarm-state
-  function on_toggle_alarm_state(event) {
-    if ($(event.target).val() === 'enabled') {
-      $(event.target).val('disabled');
-      $(event.target).removeClass("w3-border-blue w3-text-blue");
-      $(event.target).addClass("w3-border-red w3-text-red");
-    } else {
-      $(event.target).val('enabled');
-      $(event.target).addClass("w3-border-blue w3-text-blue");
-      $(event.target).removeClass("w3-border-red w3-text-red");
-    }
   };
 </script>
 
