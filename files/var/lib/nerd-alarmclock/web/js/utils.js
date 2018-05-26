@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------
 // Webinterface for the Nerd-Alarmclock.
-
+//
 // This file contains some generic support functions.
 //
 // Author: Bernhard Bablok
@@ -46,8 +46,13 @@ function set_value(data,prefix='') {
           $(id).val(value);
         } else if (input_type === 'color') {
           $(id).val(rgbToHex(value));
-        } else if (input_type === 'button') {
-          // implement
+        } else if (input_type === 'checkbox') {
+          // this is rather specific :-(
+          if (value === 'enabled') {
+            $(id).prop('checked',true);
+          } else {
+            $(id).prop('checked',false);
+          }
         } else {
           $(id).val(value);    // set value directly
         }
