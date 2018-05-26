@@ -28,7 +28,7 @@ function set_value(data,prefix='') {
   for (var key in data) {
     var name = (prefix ? prefix+'_':'') + key.replace(/\./g,'_');
     var value = data[key];
-    if (typeof value === 'object') {
+    if (typeof value === 'object' && !$.isArray(value)) {
       set_value(value,name);            // recurse
     } else {
       var id = '#id_'+name;
@@ -39,10 +39,36 @@ function set_value(data,prefix='') {
          }).prop("selected", true);
       } else if (node_type === 'INPUT') {
         var input_type = $(id).attr('type');
-        if (input_type === 'text') {
+        if (input_type === 'time') {
+          // implement
+        } else if (input_type === 'color') {
+          $(id).val(rgbToHex(value));
+        } else if (input_type === 'button') {
+          // implement
+        } else {
           $(id).val(data[key]);    // set value directly
         }
       }
     }
   }
 };
+
+// --- convert RGB-array to hex-notation   -----------------------------------
+
+function rgbToHex(value) {
+  var r = value[0]
+  var g = value[1]
+  var b = value[2]
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+// --- convert hex-notation of color to RGB-array   --------------------------
+
+function hexToRgb(value) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(value);
+  return result ? [
+    parseInt(result[1], 16),
+    parseInt(result[2], 16),
+    parseInt(result[3], 16)
+                   ] : [0,0,0];
+}
