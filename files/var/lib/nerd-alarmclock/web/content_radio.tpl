@@ -17,11 +17,23 @@
 <script  type="text/javascript">
   $(document).ready(function() {
     $('#id_radio_current_list').on('change',on_list_changed);
+    $('#id_channels').on('change',on_channel_changed);
   });
 
+  // event-handler: save current list and update channel-dropdown
   function on_list_changed(event) {
     var index = $(event.target).prop('selectedIndex');
+    var name = nclock.lists['channel_lists'][index];
+    nclock.radio["radio.current.list"] = name;
     fill_channels(index);
+  };
+
+  // event-handler: save index of current channel
+  function on_channel_changed(event) {
+    var index = $(event.target).prop('selectedIndex');
+    var name = nclock.radio["radio.current.list"];
+    var key  = "radio.channel."+name+".index";
+    nclock.radio[key] = index;
   };
 
   function fill_channels(index) {
