@@ -21,10 +21,18 @@
 
   function on_list_changed(event) {
     var index = $(event.target).prop('selectedIndex');
+    fill_channels(index);
+  };
+
+  function fill_channels(index) {
     $('#id_channels').empty();
     fill_list(nclock.lists.channels[index],$('#id_channels'),
                              function(element) {return element.name;}
               );
+    var name = nclock.lists['channel_lists'][index];
+    var key = "radio.channel."+name+".index";
+    var value = nclock.lists.channels[index][nclock.radio[key]].name;
+    set_value({"channels": value});
   };
 
   function read_radio_settings() {
@@ -37,9 +45,7 @@
                 nclock.lists.channel_lists.findIndex(function(name) {
                    return name === data["radio.current.list"];
                 }) : 0;
-      fill_list(nclock.lists.channels[index],$('#id_channels'),
-                             function(element) {return element.name;}
-                );
+      fill_channels(index);
       // server-settings -> UI
       set_value(data);
     });
