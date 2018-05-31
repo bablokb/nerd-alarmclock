@@ -21,9 +21,8 @@ function fill_list(data,element,func) {
   },element);
 };
 
-// --- set value of an element   ---------------------------------------------
+// --- set values of elements   ----------------------------------------------
 
-// TODO: support checkbox, radiobox, select
 function set_value(data,prefix='') {
   for (var key in data) {
     var name = (prefix ? prefix+'_':'') + key.replace(/\./g,'_');
