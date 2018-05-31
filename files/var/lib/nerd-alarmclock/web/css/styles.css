@@ -86,6 +86,6 @@ input:checked + .slider:before {
 }
 
 .weekDays-selector input[type=checkbox]:checked + label {
-  background: #2AD705;
+  background: #2196F3;
   color: #ffffff;
 }
