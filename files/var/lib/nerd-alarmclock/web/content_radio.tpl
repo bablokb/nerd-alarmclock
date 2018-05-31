@@ -15,6 +15,18 @@
 <!-- helper scripts   --------------------------------------------------   -->
 
 <script  type="text/javascript">
+  $(document).ready(function() {
+    $('#id_radio_current_list').on('change',on_list_changed);
+  });
+
+  function on_list_changed(event) {
+    var index = $(event.target).prop('selectedIndex');
+    $('#id_channels').empty();
+    fill_list(nclock.lists.channels[index],$('#id_channels'),
+                             function(element) {return element.name;}
+              );
+  };
+
   function read_radio_settings() {
     $.ajax({
       url: "/radio/read"
