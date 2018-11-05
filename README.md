@@ -10,6 +10,7 @@ A Pi-Zero W based alarm-clock for nerds with many unique functions:
 
 After a few prototypes, there is now a nice case: ![](doc/final.jpg "Alarm-Clock in it's 3D-printed case"). You can download and modify the design from
 [3D-case](https://www.tinkercad.com/things/7gM0KUdlLRA "Nerd Alarmclock Case").
+STL-files are also available from the [misc-directory](misc/ "misc directory").
 
 Table of Contents
 -----------------
