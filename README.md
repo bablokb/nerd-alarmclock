@@ -8,7 +8,8 @@ A Pi-Zero W based alarm-clock for nerds with many unique functions:
  - play sounds or internet radio
  - use a chat-bot for configuration
 
-See the alarm-clock in a prototype housing: ![](doc/prototype.jpg "Alarm-Clock in a prototype housing").
+After a few prototypes, there is now a nice case: ![](doc/final.jpg "Alarm-Clock in it's 3D-printed case"). You can download and modify the design from
+[3D-case](https://www.tinkercad.com/things/7gM0KUdlLRA "Nerd Alarmclock Case").
 
 Table of Contents
 -----------------
