@@ -89,6 +89,7 @@ msgid ""
 "Alarm:     %s,\n"
 " state:    %s\n"
 " time:     %s\n"
+" tdm:      %s (toggle day mode)\n"
 " snooze:   %s\n"
 " days:     %s\n"
 " LED:      %s (duration: %s, delay: %s)\n"
@@ -101,6 +102,7 @@ msgstr ""
 "Alarm: %s,\n"
 " Status: %s\n"
 " Zeit: %s\n"
+" Anschalten Tag-Modus: %s\n"
 " Schlummern: %s\n"
 " Tage: %s\n"
 " LED: %s (Dauer: %s, Verzögerung: %s)\n"
@@ -163,6 +165,9 @@ msgstr "Status: %s"
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:323
 msgid "time: %s"
 msgstr "Zeit: %s"
+
+msgid "turn on day-mode: %s"
+msgstr "Anschalten Tag-Modus: %s"
 
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:326
 msgid "snooze: %s"
@@ -236,6 +241,9 @@ msgstr "Ungültige Zeitangabe"
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:411
 msgid "new time: %s"
 msgstr "Neue Alarmzeit: %s"
+
+msgid "Set toggle day-mode of alarm"
+msgstr "Anschalten Tag-Modus"
 
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:434
 msgid "Set alarm snooze-delay"
