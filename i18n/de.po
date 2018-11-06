@@ -92,7 +92,8 @@ msgid ""
 " snooze:   %s\n"
 " days:     %s\n"
 " LED:      %s (duration: %s, delay: %s)\n"
-" display:  %s\n"
+" display:  %s (text: %s\n"
+"               duration: %s, delay: %s)\n"
 " sound:    %s (duration: %s, delay: %s)\n"
 " volume:   %s\n"
 " fadein:   %s\n"
@@ -103,7 +104,8 @@ msgstr ""
 " Schlummern: %s\n"
 " Tage: %s\n"
 " LED: %s (Dauer: %s, Verzögerung: %s)\n"
-" Display: %s\n"
+" Display: (%s\n"
+"           Dauer: %s, Verzögerung: %s)\n"
 " Sound:  %s (Dauer: %s, Verzögerung: %s)\n"
 " Lautstärke: %s\n"
 " Fade-In: %s\n"
@@ -173,6 +175,12 @@ msgstr "Tage: %s"
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:332
 msgid "LED: %s"
 msgstr "LED: %s"
+
+msgid "Display: %s"
+msgstr "Display: %s"
+
+msgid "text: %s"
+msgstr "Text: %s"
 
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:337
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:340
@@ -250,6 +258,9 @@ msgstr "Auswahl Tage: %s"
 msgid "selected LED-alarm: %s"
 msgstr "Ausgewählter LED-Alarm: %s"
 
+msgid "selected display-alarm: %s"
+msgstr "Ausgewählter Display-Alarm: %s"
+
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:494
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:509
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:532
@@ -260,6 +271,9 @@ msgstr "Kein Alarm"
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:514
 msgid "Select LED-alarm"
 msgstr "Auswahl LED-Alarmtyp"
+
+msgid "Select display-alarm"
+msgstr "Auswahl Display-Alarmtyp"
 
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:531
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:535
@@ -291,6 +305,18 @@ msgstr "Verzögerung des LED Alarms festlegen"
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:708
 msgid "new delay: %s"
 msgstr "Neue Verzögerung: %s"
+
+msgid "Set display alarm duration"
+msgstr "Dauer des Display Alarms festlegen"
+
+msgid "Set display alarm delay"
+msgstr "Verzögerung des Display Alarms festlegen"
+
+msgid "Set display alarm text"
+msgstr "Alarm Text"
+
+msgid "No text selection for this alarm-type"
+msgstr "Keine Textwahl für diesen Alarm-Typ"
 
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:670
 msgid "Set sound alarm duration"
