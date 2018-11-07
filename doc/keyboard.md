@@ -23,7 +23,7 @@ controls `alarm1`:
 | `1`    | toggle state of alarm 1  | load overloaded functions (set 1) |
 | `2`    | toggle state of alarm 2  | load overloaded functions (set 2) |
 | `3`    | toggle state of alarm 3  |                                   |
-| `4`    | toggle state of alarm 4  | toggle day/night mode             |
+| `4`    | toggle state of alarm 4  | toggle lights-off mode            |
 | `SNZ`  | snooze / show display    | toggle lamp                       |
 
 State transistions for alarms:
