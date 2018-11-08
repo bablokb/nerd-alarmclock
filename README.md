@@ -43,11 +43,14 @@ Available branches:
 
 Besides fixing some minor bugs, this version adds the following features:
 
-  - control the clock using an IR remote (complete)
-  - use the LED-strip as a lamp (testing)
+  - control the clock using an IR remote
+  - use the LED-strip as a lamp
   - add parameter `delay` to all alarms (e.g. to start the sound later than
-    the light) (complete)
-  - Add a web-interface to be independent from telegram (work-in-progress)
+    the light)
+  - add configuration of text-alarms via bot
+  - add "lights-off-mode": turn of/on LEDs and display
+  - Add a web-interface to be independent from telegram
+    (currently read-only, i.e. no update of settings from the web-interface yet)
 
 Note that you should read the section *Upgrade* below if you are upgrading
 from a previous version.
@@ -112,7 +115,7 @@ Since you need the GPIOs for both hardware extensions, you cannot just
 plug in the LED-strip or the hat on the Pi. You can either
 connect the components using
 [some jumper cables](doc/assembly.jpg "Assembly"), or you use an extension board.
-When using jumper cables, observe use the pinout provided by
+When using jumper cables, observe the pinout provided by
 [https://pinout.xyz](https://pinout.xyz "Pinout"). The pins are also
 documented [here](doc/pins.md "Pins").
 
