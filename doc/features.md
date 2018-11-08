@@ -16,13 +16,15 @@ Implemented
   - If brightness is zero pushing the "snooze"-button will show the display
     for two seconds (the 4-letter-pHat is still too bright at night, even at
     it's dimmest setting). (**since v2**)
+  - turn off/on display and LEDs (with the option to turn the lights on
+    after an alarm) (**new**)
   - Support four alarms
   - Every alarm is configurable
     * time
     * day(s) of the week
     * duration
-    * delay for light or sound (e.g. sound will start 2 minutes after light
-      or vica-versa) (**new**)
+    * delay for light, dispay and sound (e.g. sound will start 2 minutes after
+      the alarm starts) (**new**)
     * snooze-time (**since v2**)
     * type of light-alarm to show
     * type of display-alarm to show (e.g. some running text)
@@ -45,10 +47,11 @@ Implemented
     * restart the clock
     * reboot or shutdown the system
   - Restart/Reboot/Shutdown available from push-button (**since v2**)
+  - Provides a web-interface (currently read-only) (**new**)
 
 
 Planned
 -------
 
-  - Add a web-interface to be independent from telegram
-  - show metadata on the display
+  - enable configuration-updates from the web-interface
+  - show metadata (ICY-tags) on the display
