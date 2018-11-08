@@ -75,7 +75,6 @@
       <!-- alarm-selection ----------------------------------------------- -->
       <div class="w3-row-padding w3-section">
         <label for="id_alarm_nr" class="w3-col l1">Nr</label>
-        <!-- TODO: implement on_alarm_nr_select() -->
         <select class="w3-select w3-col l1" id="id_alarm_nr">
            <option value="1">1</option>
            <option value="2">2</option>
