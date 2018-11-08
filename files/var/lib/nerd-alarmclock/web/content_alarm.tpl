@@ -101,6 +101,16 @@
         <input type="time" class="w3-input w3-col l1" id="id_alarm_time"/>
       </div>
 
+      <!-- toggle lights-off mode   -------------------------------------- -->
+      <div class="w3-row-padding w3-section">
+        <label for="id_alarm_tlo" class="w3-col l1">Toggle Lights-off Mode</label>
+        <label class="switch w3-col">
+           <input type="checkbox" id="id_alarm_tlo"
+                  name="alarm_tlo"/>
+           <span class="slider round"></span>
+        </label>
+      </div>
+
       <!-- snooze -------------------------------------------------------- -->
       <div class="w3-row-padding w3-section">
         <label for="id_alarm_snooze" class="w3-col l1">Snooze</label>
