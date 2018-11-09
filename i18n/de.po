@@ -230,6 +230,9 @@ msgstr "schlummern"
 msgid "Change state of alarm"
 msgstr "Status des Alarms ändern"
 
+msgid "new state: %s"
+msgstr "Neuer Wert: %s"
+
 #: files/usr/local/lib/python2.7/site-packages/nclock/BotThread.py:393
 msgid "Set alarm time"
 msgstr "Alarmzeit ändern"
