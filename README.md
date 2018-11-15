@@ -41,6 +41,10 @@ Available branches:
 
 ### next / work in progress ###
 
+  - enable update of settings from web-interface (planned)
+
+### stable_v3 / Nov 15, 2018 ###
+
 Besides fixing some minor bugs, this version adds the following features:
 
   - control the clock using an IR remote
